@@ -1,0 +1,12 @@
+{
+  "name": "tourinsrilanka",
+  "displayName": "tourinsrilanka",
+  "expo": {
+    "name": "tourinsrilanka",
+    "slug": "tourinsrilanka",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
