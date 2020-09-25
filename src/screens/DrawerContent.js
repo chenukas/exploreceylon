@@ -14,7 +14,7 @@ export function DrawerContent(props) {
               source={require("../../assets/back.jpg")}
               style={{ width: undefined, padding: 10 }}
             >
-              <View style={{ marginTop: 15 }}>
+              <View style={{ marginTop: 15, paddingLeft: 6 }}>
                 <Image
                   source={require("../../assets/user.jpg")}
                   style={styles.profile}
@@ -27,7 +27,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="home" color={color} size={size} />
+                <Icon name="home" color={"#fcc221"} size={size} />
               )}
               label="Home"
               onPress={() => {
@@ -37,7 +37,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="briefcase" color={color} size={size} />
+                <Icon name="briefcase" color={"#fcc221"} size={size} />
               )}
               label="Bookings"
               onPress={() => {
@@ -47,7 +47,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="navigation" color={color} size={size} />
+                <Icon name="navigation" color={"#fcc221"} size={size} />
               )}
               label="Nearby Places"
               onPress={() => {
@@ -57,7 +57,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="map-pin" color={color} size={size} />
+                <Icon name="map-pin" color={"#fcc221"} size={size} />
               )}
               label="Information"
               onPress={() => {
@@ -67,7 +67,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="heart" color={color} size={size} />
+                <Icon name="heart" color={"#fcc221"} size={size} />
               )}
               label="Favorites"
               onPress={() => {
@@ -77,7 +77,7 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="user" color={color} size={size} />
+                <Icon name="user" color={"#fcc221"} size={size} />
               )}
               label="Profile"
               onPress={() => {
@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 80,
-    borderWidth: 3,
-    borderColor: "#fff",
+    borderWidth: 2,
+    borderColor: "#fcc221",
   },
   name: {
     color: "#000",
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     marginVertical: 8,
     paddingTop: 10,
+    paddingLeft: 10,
   },
   row: {
     marginTop: 20,
