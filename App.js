@@ -11,6 +11,10 @@ import NearCategory from './src/screens/NearCategory';
 import { DrawerContent } from './src/screens/DrawerContent';
 import HomeScreen from './src/screens/HomeScreen';
 import searchNearestPlaces from './src/screens/searchNearestPlaces';
+import searchHotel from './src/screens/searchHotel';
+import userProfile from './src/screens/userProfile';
+import viewFavorites from './src/screens/viewFavorites';
+import searchCity from './src/screens/searchCity';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -47,6 +51,23 @@ function App() {
           <Drawer.Screen
           name="searchNearestPlaces"
           component={searchNearestPlaces} />
+          <Drawer.Screen
+          name="searchHotel"
+          component={searchHotel}
+          />
+          <Drawer.Screen
+          name="userProfile"
+          component={userProfile}
+          />
+          <Drawer.Screen
+          name="viewFavorites"
+          component={viewFavorites}
+          />
+          <Drawer.Screen
+          name="searchCity"
+          component={searchCity}
+          />
+
       </Drawer.Navigator>  
     </NavigationContainer>   
   );
