@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
             >
                 <View style={styles.DarkOverlay}>
                     <View>
-                    <Image source={require("../../assets/logo.jpg")} style={styles.logo} />
+                    <Image source={require("../../assets/logo.png")} style={styles.logo} />
                     </View>
                     <Text style={{color: '#69036B', fontSize: 36, fontWeight: 'bold', paddingLeft: 70}}>Tour in SriLanka</Text>
                     <Text style={{color: '#000', fontSize: 14, fontWeight: 'normal', paddingLeft: 40, paddingRight: 20}}>The best story about a place that captures its essence and reveals its attractions, making the reader want to go there.
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
       marginLeft: 120,
       marginTop: 10,
       borderRadius: 80,
-      borderWidth: 3,
-      borderColor: "#fff"
+      //borderWidth: 3,
+      //borderColor: "#fff"
     },
     ImageOverlay: {
       width: 130,
