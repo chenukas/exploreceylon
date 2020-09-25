@@ -14,6 +14,11 @@
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		96905EF65AED1B983A6B3ABC /* libPods-nav.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-nav.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		7252511B10ED41EF9355C635 /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B93EC939DD2846A18277C707 /* AmaticSC-Bold.ttf */; };
+		5023A2C9FC8E4F288FBC5D20 /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C431B8D1DD441AF813FE722 /* AmaticSC-Regular.ttf */; };
+		B4BEACA89578447B8672B9B7 /* ArchitectsDaughter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7C795DE514318B8A3DFC1 /* ArchitectsDaughter-Regular.ttf */; };
+		6190B7DAB7B4404C90543C3B /* GloriaHallelujah-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1E1E41F389542528A698761 /* GloriaHallelujah-Regular.ttf */; };
+		B934576568CF4A7B9FBA3C28 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2DE774A3A29442BBC1CFA92 /* IndieFlower-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		B93EC939DD2846A18277C707 /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; name = "AmaticSC-Bold.ttf"; path = "../assets/fonts/AmaticSC-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C431B8D1DD441AF813FE722 /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; name = "AmaticSC-Regular.ttf"; path = "../assets/fonts/AmaticSC-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1EA7C795DE514318B8A3DFC1 /* ArchitectsDaughter-Regular.ttf */ = {isa = PBXFileReference; name = "ArchitectsDaughter-Regular.ttf"; path = "../assets/fonts/ArchitectsDaughter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1E1E41F389542528A698761 /* GloriaHallelujah-Regular.ttf */ = {isa = PBXFileReference; name = "GloriaHallelujah-Regular.ttf"; path = "../assets/fonts/GloriaHallelujah-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A2DE774A3A29442BBC1CFA92 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; name = "IndieFlower-Regular.ttf"; path = "../assets/fonts/IndieFlower-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
+				F40B0828B4F442C19509AFF0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -118,6 +129,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F40B0828B4F442C19509AFF0 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				B93EC939DD2846A18277C707 /* AmaticSC-Bold.ttf */,
+				7C431B8D1DD441AF813FE722 /* AmaticSC-Regular.ttf */,
+				1EA7C795DE514318B8A3DFC1 /* ArchitectsDaughter-Regular.ttf */,
+				E1E1E41F389542528A698761 /* GloriaHallelujah-Regular.ttf */,
+				A2DE774A3A29442BBC1CFA92 /* IndieFlower-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -182,6 +206,11 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
+				7252511B10ED41EF9355C635 /* AmaticSC-Bold.ttf in Resources */,
+				5023A2C9FC8E4F288FBC5D20 /* AmaticSC-Regular.ttf in Resources */,
+				B4BEACA89578447B8672B9B7 /* ArchitectsDaughter-Regular.ttf in Resources */,
+				6190B7DAB7B4404C90543C3B /* GloriaHallelujah-Regular.ttf in Resources */,
+				B934576568CF4A7B9FBA3C28 /* IndieFlower-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
