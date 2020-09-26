@@ -8,7 +8,10 @@ import {
   ScrollView,
   Image,
   ImageBackground,
+  TextInput,
 } from "react-native";
+
+import Icon from "react-native-vector-icons/Feather";
 
 const searchHotel = ({ navigation }) => {
   return (
@@ -20,32 +23,132 @@ const searchHotel = ({ navigation }) => {
             imageStyle={{ borderBottomRightRadius: 65 }}
           >
             <View style={styles.darkOverlay}>
-              <Text>Hello World</Text>
+              <View style={{ flex: 1, flexDirection: "column" }}>
+                <TextInput
+                  style={{
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    margin: 4,
+                    borderColor: "#e6e4df",
+                    backgroundColor: "#f2f0eb",
+                  }}
+                  placeholder="Name/Location"
+                ></TextInput>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    alignSelf: "center",
+                    margin: 3,
+                  }}
+                >
+                  <TextInput
+                    style={{
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      margin: 3,
+                      width: "49%",
+                      borderColor: "#e6e4df",
+                      backgroundColor: "#f2f0eb",
+                    }}
+                    placeholder="Check-in(MM/DD/YYYY)"
+                    keyboardType="numbers-and-punctuation"
+                  ></TextInput>
+                  <TextInput
+                    style={{
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      margin: 3,
+                      width: "49%",
+                      borderColor: "#e6e4df",
+                      backgroundColor: "#f2f0eb",
+                    }}
+                    placeholder="Check-out(MM/DD/YYYY)"
+                    keyboardType="numbers-and-punctuation"
+                  ></TextInput>
+                </View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    alignSelf: "center",
+                    margin: 3,
+                  }}
+                >
+                  <TextInput
+                    style={{
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      margin: 3,
+                      width: "49%",
+                      borderColor: "#e6e4df",
+                      backgroundColor: "#f2f0eb",
+                    }}
+                    placeholder="No. of Heads"
+                    keyboardType="number-pad"
+                  ></TextInput>
+                  <TextInput
+                    style={{
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      margin: 3,
+                      width: "49%",
+                      borderColor: "#e6e4df",
+                      backgroundColor: "#f2f0eb",
+                    }}
+                    placeholder="No. of Rooms"
+                    keyboardType="number-pad"
+                  ></TextInput>
+                </View>
+                <TouchableOpacity>
+                  <View
+                    style={{
+                      borderRadius: 10,
+                      height: 50,
+                      margin: 4,
+                      backgroundColor: "#93a8c9",
+                    }}
+                  >
+                    <Text
+                      style={{
+                        alignSelf: "center",
+                        margin: 10,
+                        fontSize: 20,
+                        color: "white",
+                      }}
+                    >
+                      Find Accommodation
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
           </ImageBackground>
         </View>
 
         <ScrollView>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              borderRadius: 10,
-              borderWidth: 2,
-              borderColor: "#fcc221",
-              width: "95%",
-              alignSelf: "center",
-            }}
-          >
-            <Image
-              source={require("../../assets/images/legrand.jpg")}
-              style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
-            ></Image>
-            <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
-              <Text style={styles.hotelNames}>Le Grand Galle</Text>
-              <Text style={styles.prices}>$250/per night</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("leGrand")}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                borderRadius: 10,
+                borderWidth: 2,
+                borderColor: "#fcc221",
+                width: "95%",
+                alignSelf: "center",
+              }}
+            >
+              <Image
+                source={require("../../assets/images/legrand.jpg")}
+                style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
+              ></Image>
+              <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
+                <Text style={styles.hotelNames}>Le Grand Galle</Text>
+                <Text style={styles.prices}>$250/per night</Text>
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
           <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
           <View
             style={{
@@ -153,10 +256,7 @@ const styles = StyleSheet.create({
     left: 7,
     height: 250,
     width: "97%",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    borderRadius: 10,
     backgroundColor: "#fcc221",
     alignSelf: "center",
   },
