@@ -11,12 +11,12 @@ export function DrawerContent(props) {
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
             <ImageBackground
-              source={require("../../assets/back.jpg")}
+              source={require("../../assets/images/back.jpg")}
               style={{ width: undefined, padding: 10 }}
             >
               <View style={{ marginTop: 15, paddingLeft: 6 }}>
                 <Image
-                  source={require("../../assets/user.jpg")}
+                  source={require("../../assets/images/user.jpg")}
                   style={styles.profile}
                 />
               </View>
