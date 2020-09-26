@@ -23,30 +23,16 @@ const HomeScreen = ({ navigation }) => {
             <View style={styles.DarkOverlay}>
               <View>
                 <Image
-                  source={require("../../assets/logo.png")}
+                  source={require("../../assets/images/logo.png")}
                   style={styles.logo}
                 />
               </View>
-              <Text
-                style={{
-                  color: "#ffffff",
-                  fontSize: 40,
-                  fontWeight: "300",
-                  position: "absolute",
-                  fontFamily: "IndieFlower-Regular",
-                  top: 20,
-                  left: 52,
-                }}
-              >
-                Explore Ceylon
-              </Text>
             </View>
           </ImageBackground>
           <View>
             <Text
               style={{
                 color: "#000",
-
                 fontSize: 28,
                 fontWeight: "bold",
                 fontFamily: "courier",
@@ -62,7 +48,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/sigiriya.jpg")}
+                source={require("../../assets/images/sigiriya.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -76,7 +62,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/mirissa.jpeg")}
+                source={require("../../assets/images/mirissa.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -90,7 +76,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/Ella.jpg")}
+                source={require("../../assets/images/ella.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -107,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/nuwaraeliya1.jpg")}
+                source={require("../../assets/images/anuradhapura.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -117,11 +103,11 @@ const HomeScreen = ({ navigation }) => {
                 color="white"
                 style={styles.imageLocationIcon}
               />
-              <Text style={styles.ImageText}>Nuwara Eliya</Text>
+              <Text style={styles.ImageText}>Anuradhapura</Text>
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/hikkaduwa.jpg")}
+                source={require("../../assets/images/diyaluma.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -131,11 +117,12 @@ const HomeScreen = ({ navigation }) => {
                 color="white"
                 style={styles.imageLocationIcon}
               />
-              <Text style={styles.ImageText}>Hikkaduwa</Text>
+              <Text style={styles.ImageText}>Haputale</Text>
             </View>
+
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/galle.jpg")}
+                source={require("../../assets/images/galle.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -152,7 +139,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/badulla.png")}
+                source={require("../../assets/images/hikkaduwa.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -162,11 +149,11 @@ const HomeScreen = ({ navigation }) => {
                 color="white"
                 style={styles.imageLocationIcon}
               />
-              <Text style={styles.ImageText}>Badulla</Text>
+              <Text style={styles.ImageText}>Hikkaduwa</Text>
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/horton.jpg")}
+                source={require("../../assets/images/hortonplains.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -180,7 +167,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/9arch.jpg")}
+                source={require("../../assets/images/nuwaraeliya.jpg")}
                 style={styles.image}
               />
               <View style={styles.ImageOverlay}></View>
@@ -190,7 +177,7 @@ const HomeScreen = ({ navigation }) => {
                 color="white"
                 style={styles.imageLocationIcon}
               />
-              <Text style={styles.ImageText}>9 Arch Bridge</Text>
+              <Text style={styles.ImageText}>Nuwara Eliya</Text>
             </View>
           </View>
         </ScrollView>
@@ -225,7 +212,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
-    alignSelf: "flex-end",
+    alignSelf: "center",
     position: "absolute",
   },
   ImageOverlay: {
