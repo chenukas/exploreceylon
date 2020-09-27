@@ -32,6 +32,7 @@ const searchHotel = ({ navigation }) => {
                     fontSize: 16,
                   }}
                   placeholder="Name/Location"
+                  returnKeyType="next"
                 ></TextInput>
                 <View
                   style={{
@@ -51,8 +52,10 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="Check-in(MM/DD/YYYY)"
-                    keyboardType="numbers-and-punctuation"
+                    placeholder="Check-out(MM-DD-YYYY)"
+                    maxLength={10}
+                    keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                   <TextInput
                     style={{
@@ -64,8 +67,10 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="Check-out(MM/DD/YYYY)"
-                    keyboardType="numbers-and-punctuation"
+                    placeholder="Check-out(MM-DD-YYYY)"
+                    maxLength={10}
+                    keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                 </View>
                 <View
@@ -86,8 +91,9 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="No. of Heads"
+                    placeholder="No. of People"
                     keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                   <TextInput
                     style={{
@@ -101,6 +107,7 @@ const searchHotel = ({ navigation }) => {
                     }}
                     placeholder="No. of Rooms"
                     keyboardType="number-pad"
+                    returnKeyType="done"
                   ></TextInput>
                 </View>
                 <TouchableOpacity>
