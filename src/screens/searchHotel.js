@@ -254,14 +254,13 @@ const styles = StyleSheet.create({
   },
   darkOverlay: {
     position: "absolute",
-    top: 5,
-    right: 5,
-    left: 7,
+
     height: 250,
-    width: "97%",
+    width: "96%",
     borderRadius: 10,
     backgroundColor: "#ffffff",
     alignSelf: "center",
+    margin: 10,
   },
   hotelNames: {
     padding: 5,
