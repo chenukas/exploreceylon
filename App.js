@@ -16,6 +16,7 @@ import userProfile from "./src/screens/userProfile";
 import viewFavorites from "./src/screens/viewFavorites";
 import searchCity from "./src/screens/searchCity";
 import leGrand from "./src/screens/leGrand";
+import reserveHotel from "./src/screens/reserveHotel";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -52,6 +53,7 @@ function App() {
         />
         <Drawer.Screen name="searchHotel" component={searchHotel} />
         <Drawer.Screen name="leGrand" component={leGrand} />
+        <Drawer.Screen name="reserveHotel" component={reserveHotel} />
         <Drawer.Screen name="userProfile" component={userProfile} />
         <Drawer.Screen name="viewFavorites" component={viewFavorites} />
         <Drawer.Screen name="searchCity" component={searchCity} />
