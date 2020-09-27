@@ -86,7 +86,7 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="No. of Heads"
+                    placeholder="No. of People"
                     keyboardType="number-pad"
                   ></TextInput>
                   <TextInput
