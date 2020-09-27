@@ -10,6 +10,8 @@ import {
   TextInput,
 } from "react-native";
 
+import CheckBox from "@react-native-community/checkbox";
+
 const reserveHotel = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -34,7 +36,8 @@ const reserveHotel = ({ navigation }) => {
               backgroundColor: "#fafbfc",
               fontSize: 16,
             }}
-            placeholder="Name/Location"
+            placeholder="Full Name"
+            returnKeyType="next"
           ></TextInput>
           <TextInput
             style={{
@@ -46,6 +49,9 @@ const reserveHotel = ({ navigation }) => {
               fontSize: 16,
             }}
             placeholder="NIC"
+            maxLength={12}
+            keyboardType="number-pad"
+            returnKeyType="next"
           ></TextInput>
           <TextInput
             style={{
@@ -57,6 +63,9 @@ const reserveHotel = ({ navigation }) => {
               fontSize: 16,
             }}
             placeholder="Mobile"
+            maxLength={10}
+            keyboardType="number-pad"
+            returnKeyType="next"
           ></TextInput>
         </View>
         <View
@@ -87,8 +96,10 @@ const reserveHotel = ({ navigation }) => {
                 backgroundColor: "#fafbfc",
                 fontSize: 16,
               }}
-              placeholder="Check-in(MM/DD/YYYY)"
-              keyboardType="numbers-and-punctuation"
+              placeholder="Check-in(MM-DD-YYYY)"
+              maxLength={10}
+              keyboardType="number-pad"
+              returnKeyType="next"
             ></TextInput>
             <TextInput
               style={{
@@ -100,8 +111,10 @@ const reserveHotel = ({ navigation }) => {
                 backgroundColor: "#fafbfc",
                 fontSize: 16,
               }}
-              placeholder="Check-out(MM/DD/YYYY)"
-              keyboardType="numbers-and-punctuation"
+              placeholder="Check-out(MM-DD-YYYY)"
+              maxLength={10}
+              keyboardType="number-pad"
+              returnKeyType="next"
             ></TextInput>
           </View>
           <View
@@ -124,6 +137,7 @@ const reserveHotel = ({ navigation }) => {
               }}
               placeholder="No. of People"
               keyboardType="number-pad"
+              returnKeyType="next"
             ></TextInput>
             <TextInput
               style={{
@@ -137,6 +151,7 @@ const reserveHotel = ({ navigation }) => {
               }}
               placeholder="No. of Rooms"
               keyboardType="number-pad"
+              returnKeyType="done"
             ></TextInput>
           </View>
         </View>
@@ -146,12 +161,63 @@ const reserveHotel = ({ navigation }) => {
             borderRadius: 10,
             marginRight: 10,
             marginLeft: 10,
-            height: 150,
+            height: 179,
           }}
         >
           <Text style={{ margin: 10, fontSize: 18, fontWeight: "bold" }}>
             Meals
           </Text>
+          <View>
+            <CheckBox
+              disabled={true}
+              onCheckColor={"#fcc221"}
+              style={{ margin: 5 }}
+            />
+            <Text
+              style={{
+                position: "absolute",
+                margin: 10,
+                marginLeft: 40,
+                fontSize: 15,
+              }}
+            >
+              Breakfast
+            </Text>
+          </View>
+          <View>
+            <CheckBox
+              disabled={true}
+              onCheckColor={"#fcc221"}
+              style={{ margin: 5 }}
+            />
+            <Text
+              style={{
+                position: "absolute",
+                margin: 10,
+                marginLeft: 40,
+                fontSize: 15,
+              }}
+            >
+              Half Board
+            </Text>
+          </View>
+          <View>
+            <CheckBox
+              disabled={true}
+              onCheckColor={"#fcc221"}
+              style={{ margin: 5 }}
+            />
+            <Text
+              style={{
+                position: "absolute",
+                margin: 10,
+                marginLeft: 40,
+                fontSize: 15,
+              }}
+            >
+              Full Board
+            </Text>
+          </View>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("payHotel")}>
           <View
