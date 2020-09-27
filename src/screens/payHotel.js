@@ -217,7 +217,9 @@ const payHotel = ({ navigation }) => {
           </View>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate("payHotel")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("completedBooking")}
+        >
           <View
             style={{
               backgroundColor: "#fcc221",
