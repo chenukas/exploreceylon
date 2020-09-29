@@ -11,8 +11,6 @@ import {
   TextInput,
 } from "react-native";
 
-import Icon from "react-native-vector-icons/Feather";
-
 const searchHotel = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -29,10 +27,12 @@ const searchHotel = ({ navigation }) => {
                     borderWidth: 1,
                     borderRadius: 10,
                     margin: 4,
-                    borderColor: "#e6e4df",
-                    backgroundColor: "#f2f0eb",
+                    borderColor: "#fafbfc",
+                    backgroundColor: "#fafbfc",
+                    fontSize: 16,
                   }}
                   placeholder="Name/Location"
+                  returnKeyType="next"
                 ></TextInput>
                 <View
                   style={{
@@ -48,11 +48,14 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       margin: 3,
                       width: "49%",
-                      borderColor: "#e6e4df",
-                      backgroundColor: "#f2f0eb",
+                      borderColor: "#fafbfc",
+                      backgroundColor: "#fafbfc",
+                      fontSize: 16,
                     }}
-                    placeholder="Check-in(MM/DD/YYYY)"
-                    keyboardType="numbers-and-punctuation"
+                    placeholder="Check-out(MM-DD-YYYY)"
+                    maxLength={10}
+                    keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                   <TextInput
                     style={{
@@ -60,11 +63,14 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       margin: 3,
                       width: "49%",
-                      borderColor: "#e6e4df",
-                      backgroundColor: "#f2f0eb",
+                      borderColor: "#fafbfc",
+                      backgroundColor: "#fafbfc",
+                      fontSize: 16,
                     }}
-                    placeholder="Check-out(MM/DD/YYYY)"
-                    keyboardType="numbers-and-punctuation"
+                    placeholder="Check-out(MM-DD-YYYY)"
+                    maxLength={10}
+                    keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                 </View>
                 <View
@@ -81,11 +87,13 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       margin: 3,
                       width: "49%",
-                      borderColor: "#e6e4df",
-                      backgroundColor: "#f2f0eb",
+                      borderColor: "#fafbfc",
+                      backgroundColor: "#fafbfc",
+                      fontSize: 16,
                     }}
-                    placeholder="No. of Heads"
+                    placeholder="No. of People"
                     keyboardType="number-pad"
+                    returnKeyType="next"
                   ></TextInput>
                   <TextInput
                     style={{
@@ -93,11 +101,13 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       margin: 3,
                       width: "49%",
-                      borderColor: "#e6e4df",
-                      backgroundColor: "#f2f0eb",
+                      borderColor: "#fafbfc",
+                      backgroundColor: "#fafbfc",
+                      fontSize: 16,
                     }}
                     placeholder="No. of Rooms"
                     keyboardType="number-pad"
+                    returnKeyType="done"
                   ></TextInput>
                 </View>
                 <TouchableOpacity>
@@ -106,7 +116,7 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       height: 50,
                       margin: 4,
-                      backgroundColor: "#93a8c9",
+                      backgroundColor: "#fcc221",
                     }}
                   >
                     <Text
@@ -149,7 +159,7 @@ const searchHotel = ({ navigation }) => {
               </View>
             </View>
           </TouchableOpacity>
-          <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
+          <View style={{ height: 3 }}></View>
           <View
             style={{
               flex: 1,
@@ -170,7 +180,7 @@ const searchHotel = ({ navigation }) => {
               <Text style={styles.prices}>$400/per night</Text>
             </View>
           </View>
-          <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
+          <View style={{ height: 3 }}></View>
           <View
             style={{
               flex: 1,
@@ -191,7 +201,7 @@ const searchHotel = ({ navigation }) => {
               <Text style={styles.prices}>$350/per night</Text>
             </View>
           </View>
-          <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
+          <View style={{ height: 3 }}></View>
           <View
             style={{
               flex: 1,
@@ -212,7 +222,7 @@ const searchHotel = ({ navigation }) => {
               <Text style={styles.prices}>$175/per night</Text>
             </View>
           </View>
-          <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
+          <View style={{ height: 3 }}></View>
           <View
             style={{
               flex: 1,
@@ -233,7 +243,7 @@ const searchHotel = ({ navigation }) => {
               <Text style={styles.prices}>$750/per night</Text>
             </View>
           </View>
-          <View style={{ height: 3, backgroundColor: "#ffffff" }}></View>
+          <View style={{ height: 3 }}></View>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -251,14 +261,13 @@ const styles = StyleSheet.create({
   },
   darkOverlay: {
     position: "absolute",
-    top: 5,
-    right: 5,
-    left: 7,
+
     height: 250,
-    width: "97%",
+    width: "96%",
     borderRadius: 10,
-    backgroundColor: "#fcc221",
+    backgroundColor: "#ffffff",
     alignSelf: "center",
+    margin: 10,
   },
   hotelNames: {
     padding: 5,
