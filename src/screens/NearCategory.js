@@ -15,27 +15,19 @@ const NearCategory = ({ navigation }) => {
       <View style={{ flexGrow: 1, height: "100%" }}>
         <ScrollView>
           <View style={styles.imageContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("searchNearestPlaces")}
-            >
-              <View style={styles.imageView}>
+            <View style={styles.imageView}>
                 <Image
                   source={require("../../assets/hotel1.png")}
                   style={styles.image}
                 />
-              </View>
-            </TouchableOpacity>
+            </View>
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Map")}
-            >
-              <View style={styles.imageView}>
+            <View style={styles.imageView}>
                 <Image
                   source={require("../../assets/restuarant.png")}
                   style={styles.image}
                 />
               </View>
-            </TouchableOpacity>
             
             <View style={styles.imageView}>
               <Image
@@ -84,12 +76,19 @@ const NearCategory = ({ navigation }) => {
                 style={styles.image}
               />
             </View>
-            <View style={styles.imageView}>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate("searchNearestPlaces")}
+            >
+              <View style={styles.imageView}>
               <Image
                 source={require("../../assets/super.png")}
                 style={styles.image}
               />
-            </View>
+              </View>
+
+            </TouchableOpacity>
+            
             <View style={styles.imageView}>
               <Image
                 source={require("../../assets/bus.png")}
