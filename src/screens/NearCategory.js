@@ -1,5 +1,3 @@
-// React Native Navigation Drawer – Example using Latest Navigation Version //
-// https://aboutreact.com/react-native-navigation-drawer //
 import * as React from "react";
 import {
   TouchableOpacity,
@@ -28,12 +26,17 @@ const NearCategory = ({ navigation }) => {
               </View>
             </TouchableOpacity>
 
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/restuarant.png")}
-                style={styles.image}
-              />
-            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Map")}
+            >
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/restuarant.png")}
+                  style={styles.image}
+                />
+              </View>
+            </TouchableOpacity>
+            
             <View style={styles.imageView}>
               <Image
                 source={require("../../assets/atm.png")}

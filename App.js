@@ -11,6 +11,7 @@ import NearCategory from "./src/screens/NearCategory";
 import { DrawerContent } from "./src/screens/DrawerContent";
 import HomeScreen from "./src/screens/HomeScreen";
 import searchNearestPlaces from "./src/screens/searchNearestPlaces";
+import Map from "./src/screens/Map";
 import searchHotel from "./src/screens/searchHotel";
 import userProfile from "./src/screens/userProfile";
 import viewFavorites from "./src/screens/viewFavorites";
@@ -49,6 +50,10 @@ function App() {
         <Drawer.Screen
           name="searchNearestPlaces"
           component={searchNearestPlaces}
+        />
+        <Drawer.Screen
+          name="Map"
+          component={Map}
         />
         <Drawer.Screen name="searchHotel" component={searchHotel} />
         <Drawer.Screen name="leGrand" component={leGrand} />
