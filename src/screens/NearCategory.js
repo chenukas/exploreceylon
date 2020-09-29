@@ -1,5 +1,3 @@
-// React Native Navigation Drawer – Example using Latest Navigation Version //
-// https://aboutreact.com/react-native-navigation-drawer //
 import * as React from "react";
 import {
   TouchableOpacity,
@@ -17,23 +15,20 @@ const NearCategory = ({ navigation }) => {
       <View style={{ flexGrow: 1, height: "100%" }}>
         <ScrollView>
           <View style={styles.imageContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("searchNearestPlaces")}
-            >
-              <View style={styles.imageView}>
+            <View style={styles.imageView}>
                 <Image
                   source={require("../../assets/hotel1.png")}
                   style={styles.image}
                 />
-              </View>
-            </TouchableOpacity>
+            </View>
 
             <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/restuarant.png")}
-                style={styles.image}
-              />
-            </View>
+                <Image
+                  source={require("../../assets/restuarant.png")}
+                  style={styles.image}
+                />
+              </View>
+            
             <View style={styles.imageView}>
               <Image
                 source={require("../../assets/atm.png")}
@@ -81,12 +76,19 @@ const NearCategory = ({ navigation }) => {
                 style={styles.image}
               />
             </View>
-            <View style={styles.imageView}>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate("searchNearestPlaces")}
+            >
+              <View style={styles.imageView}>
               <Image
                 source={require("../../assets/super.png")}
                 style={styles.image}
               />
-            </View>
+              </View>
+
+            </TouchableOpacity>
+            
             <View style={styles.imageView}>
               <Image
                 source={require("../../assets/bus.png")}
