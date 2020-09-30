@@ -11,11 +11,15 @@ import NearCategory from "./src/screens/NearCategory";
 import { DrawerContent } from "./src/screens/DrawerContent";
 import HomeScreen from "./src/screens/HomeScreen";
 import searchNearestPlaces from "./src/screens/searchNearestPlaces";
+import Map from "./src/screens/Map";
 import searchHotel from "./src/screens/searchHotel";
 import userProfile from "./src/screens/userProfile";
 import viewFavorites from "./src/screens/viewFavorites";
 import searchCity from "./src/screens/searchCity";
 import leGrand from "./src/screens/leGrand";
+import reserveHotel from "./src/screens/reserveHotel";
+import payHotel from "./src/screens/payHotel";
+import completedBooking from "./src/screens/completedBooking";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -50,8 +54,15 @@ function App() {
           name="searchNearestPlaces"
           component={searchNearestPlaces}
         />
+        <Drawer.Screen
+          name="Map"
+          component={Map}
+        />
         <Drawer.Screen name="searchHotel" component={searchHotel} />
         <Drawer.Screen name="leGrand" component={leGrand} />
+        <Drawer.Screen name="reserveHotel" component={reserveHotel} />
+        <Drawer.Screen name="payHotel" component={payHotel} />
+        <Drawer.Screen name="completedBooking" component={completedBooking} />
         <Drawer.Screen name="userProfile" component={userProfile} />
         <Drawer.Screen name="viewFavorites" component={viewFavorites} />
         <Drawer.Screen name="searchCity" component={searchCity} />
