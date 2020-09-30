@@ -163,12 +163,12 @@ const updateProfile = ({ navigation }) => {
           <View
             style={{
               backgroundColor: "#fcc221",
+              borderRadius: 10,
               height: 51,
-              borderTopRightRadius: 10,
-              borderTopLeftRadius: 30,
-              width: "50%",
-              alignSelf: "flex-end",
+              width: "40%",
+              alignSelf: "flex-start",
               marginRight: 10,
+              marginTop: 10,
               justifyContent: "center",
             }}
           >
@@ -181,6 +181,31 @@ const updateProfile = ({ navigation }) => {
               }}
             >
               Update
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("userProfile")}>
+          <View
+            style={{
+              backgroundColor: "#fcc221",
+              borderRadius: 10,
+              height: 51,
+              width: "40%",
+              alignSelf: "flex-end",
+              justifyContent: "center",
+              marginBottom: 20,
+              marginRight: 10,
+            }}
+          >
+            <Text
+              style={{
+                alignSelf: "center",
+                margin: 11,
+                fontSize: 20,
+                color: "white",
+              }}
+            >
+              Cancle
             </Text>
           </View>
         </TouchableOpacity>
