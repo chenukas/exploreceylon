@@ -13,7 +13,7 @@ import {
 const badulla = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text>Badullaaaa</Text>
+            <Text>Badulla</Text>
         </SafeAreaView>
     );
 };

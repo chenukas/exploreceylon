@@ -1,98 +1,97 @@
-import * as React from 'react';
-import { TouchableOpacity, View, Text, SafeAreaView, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import places from './places';
+// Searching using Search Bar Filter in React Native List View
+// https://aboutreact.com/react-native-search-bar-filter-on-listview/
 
-const searchCity = ({ navigation }) => {
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
+import { SearchBar } from 'react-native-elements';
+import { cityData } from '../data/citiesData';
+
+const App = () => {
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
+
+  useEffect(() => {
+        setFilteredDataSource(cityData);
+        setMasterDataSource(cityData);
+  }, []);
+
+  const searchFilterFunction = (text) => {
+    // Check if searched text is not blank
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.title
+          ? item.title.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
+
+  const ItemView = ({ item }) => {
+    return (
+      // Flat List Item
+      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
+        {item.title.toUpperCase()}
+      </Text>
+    );
+  };
+
+  const ItemSeparatorView = () => {
+    return (
+      // Flat List Item Separator
+      <View
+        style={{
+          height: 0.5,
+          width: '100%',
+          backgroundColor: '#C8C8C8',
+        }}
+      />
+    );
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-
-      <Text style={styles.titleText}>Search a City</Text>
-      {/* <SearchBar
-        placeholder="Type Here..."
-        onChangeText={this.updateSearch}
-        value={search}
-        /> */}
-      <ScrollView>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("ampara")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Ampara</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("anuradhapura")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Anuradhapura</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("badulla")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Badulla</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} >
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Colombo</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("galle")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Galle</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} >
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Gampaha</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Jaffna</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Kaluthara</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Kandy</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Matara</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Nuwaraeliya</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Polonnaruwa</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Rathnapura</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.cards} onPress={() => navigation.navigate("##")}>
-          <View >
-            <Text style={{ fontSize: 20, color: '#222' }}>Trincomalee</Text>
-          </View>
-        </TouchableOpacity>
-      </ScrollView>
-
-
+       <Text style={styles.titleText}>Search a City</Text>
+       <SearchBar
+          round
+          searchIcon={{ size: 24 }}
+          onChangeText={(text) => searchFilterFunction(text)}
+          onClear={(text) => searchFilterFunction('')}
+          placeholder="Type Here..."
+          value={search}
+        />
+      <View>
+        <FlatList
+        
+          data={filteredDataSource}
+          keyExtractor={(item, index) => index.toString()}
+          ItemSeparatorComponent={ItemSeparatorView}
+          renderItem={ItemView}
+        />
+      </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
+  itemStyle: {
+    padding: 10,
+  },
   titleText: {
     color: "#000",
     fontSize: 28,
@@ -110,7 +109,6 @@ const styles = StyleSheet.create({
     marginVertical: 2,
     marginHorizontal: 16,
   },
-
 });
 
-export default searchCity;
+export default App;
