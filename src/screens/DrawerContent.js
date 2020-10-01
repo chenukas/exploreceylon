@@ -37,6 +37,15 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
+                <Icon name="map-pin" color={"#fcc221"} size={size} />
+              )}
+              label="View Cities"
+              onPress={() => {
+                props.navigation.navigate("searchCity");
+              }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
                 <Icon name="briefcase" color={"#fcc221"} size={size} />
               )}
               label="Bookings"
@@ -52,16 +61,6 @@ export function DrawerContent(props) {
               label="Nearby Places"
               onPress={() => {
                 props.navigation.navigate("NearCategory");
-              }}
-            />
-
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="map-pin" color={"#fcc221"} size={size} />
-              )}
-              label="View Cities"
-              onPress={() => {
-                props.navigation.navigate("searchCity");
               }}
             />
 
