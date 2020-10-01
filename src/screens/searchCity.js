@@ -1,43 +1,114 @@
-import * as React from 'react';
-import { TouchableOpacity, Button, View, Text, SafeAreaView, StyleSheet, ScrollView, Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import places from './places';
+// Searching using Search Bar Filter in React Native List View
+// https://aboutreact.com/react-native-search-bar-filter-on-listview/
 
-const searchCity = ({ navigation }) => {
-  return (
-    <SafeAreaView style={{ flex: 1}}>
-      <View >
-        <Text style={styles.titleText}>Search a City</Text> 
-        <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("places")}
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
+import { SearchBar } from 'react-native-elements';
+import { cityData } from '../data/citiesData';
+
+const App = () => {
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
+
+  useEffect(() => {
+        setFilteredDataSource(cityData);
+        setMasterDataSource(cityData);
+  }, []);
+
+  const searchFilterFunction = (text) => {
+    // Check if searched text is not blank
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.title
+          ? item.title.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
+
+  const ItemView = ({ item }) => {
+    return (
+      // Flat List Item
+      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
+        {item.title.toUpperCase()}
+      </Text>
+    );
+  };
+
+  const ItemSeparatorView = () => {
+    return (
+      // Flat List Item Separator
+      <View
+        style={{
+          height: 0.5,
+          width: '100%',
+          backgroundColor: '#C8C8C8',
+        }}
       />
-      </View> 
-        
-    </SafeAreaView>
-  );
-}
+    );
+  };
 
-function back() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="City">
-        <Stack.Screen name="City" component={searchCity} />
-        {/* <Stack.Screen name="place" component={searchPlace} /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+       <Text style={styles.titleText}>Search a City</Text>
+       <SearchBar
+          round
+          searchIcon={{ size: 24 }}
+          onChangeText={(text) => searchFilterFunction(text)}
+          onClear={(text) => searchFilterFunction('')}
+          placeholder="Type Here..."
+          value={search}
+        />
+      <View>
+        <FlatList
+        
+          data={filteredDataSource}
+          keyExtractor={(item, index) => index.toString()}
+          ItemSeparatorComponent={ItemSeparatorView}
+          renderItem={ItemView}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
+  itemStyle: {
+    padding: 10,
+  },
   titleText: {
     color: "#000",
     fontSize: 28,
     fontWeight: "bold",
     paddingLeft: 20,
     paddingTop: 5,
-  }
+    marginBottom: 20,
+  },
+
+  cards: {
+    padding: 15,
+    borderColor: "#fcc221",
+    borderRadius: 10,
+    borderWidth: 1,
+    marginVertical: 2,
+    marginHorizontal: 16,
+  },
 });
 
-export default searchCity;
+export default App;
