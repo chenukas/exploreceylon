@@ -41,11 +41,32 @@ const userProfile = ({ navigation }) => {
               color: "#000",
               fontSize: 30,
               fontWeight: "bold",
-              marginTop: 45,
+              marginTop: 20,
               marginLeft: 23,
             }}
           >
             Natalie Eleanor
+          </Text>
+          <Text
+            style={{
+              fontSize: 18,
+              marginTop: 3,
+              marginLeft: 23,
+              alignSelf: "center",
+            }}
+          >
+            04-June-1997
+          </Text>
+          <Text
+            style={{
+              fontSize: 18,
+              marginTop: 3,
+              marginLeft: 23,
+              alignSelf: "center",
+              marginBottom: 5,
+            }}
+          >
+            23y/old
           </Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("updateProfile")}

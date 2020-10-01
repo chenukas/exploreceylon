@@ -7,13 +7,48 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  TextInput,
 } from "react-native";
 
 const updateProfile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
-        <View style={{ alignItems: "flex-start" }}>
+        <View
+          style={{
+            height: 180,
+            backgroundColor: "#ffffff",
+            margin: 10,
+            borderRadius: 10,
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => navigation.navigate("updateProfile")}
+          >
+            <View
+              style={{
+                backgroundColor: "#fcc221",
+                height: 45,
+                borderRadius: 40,
+                width: "50%",
+                alignSelf: "flex-end",
+                marginTop: 65,
+                marginRight: 15,
+                justifyContent: "center",
+              }}
+            >
+              <Text
+                style={{
+                  alignSelf: "center",
+                  margin: 11,
+                  fontSize: 20,
+                  color: "white",
+                }}
+              >
+                Upload Picture
+              </Text>
+            </View>
+          </TouchableOpacity>
           <Image
             style={{
               width: 150,
@@ -21,47 +56,22 @@ const updateProfile = ({ navigation }) => {
               borderRadius: 80,
               borderWidth: 2,
               borderColor: "#fcc221",
-              marginTop: 30,
+              marginTop: 15,
+              marginLeft: 15,
+              position: "absolute",
             }}
             source={require("../../assets/images/user.jpg")}
           ></Image>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate("updateProfile")}>
-          <View
-            style={{
-              backgroundColor: "#fcc221",
-              height: 45,
-              borderRadius: 10,
-              width: "50%",
-              alignSelf: "flex-end",
-              marginRight: 10,
-              marginTop: 1,
-              marginBottom: 10,
-              justifyContent: "center",
-            }}
-          >
-            <Text
-              style={{
-                alignSelf: "center",
-                margin: 11,
-                fontSize: 20,
-                color: "white",
-              }}
-            >
-              Upload Picture
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <View>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 20,
-            }}
-          >
-            Name
-          </Text>
-          <Text
+        <View
+          style={{
+            margin: 10,
+            backgroundColor: "#ffffff",
+            borderRadius: 10,
+            padding: 10,
+          }}
+        >
+          <TextInput
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -69,20 +79,14 @@ const updateProfile = ({ navigation }) => {
               borderColor: "#fafbfc",
               backgroundColor: "#fafbfc",
               fontSize: 20,
-              fontWeight: "bold",
+              paddingLeft: 10,
             }}
+            placeholder="Full Name"
+            returnKeyType="next"
           >
-            Chamodi Thennakoon
-          </Text>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 20,
-            }}
-          >
-            E-Mail
-          </Text>
-          <Text
+            Natalie Eleanor
+          </TextInput>
+          <TextInput
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -90,20 +94,15 @@ const updateProfile = ({ navigation }) => {
               borderColor: "#fafbfc",
               backgroundColor: "#fafbfc",
               fontSize: 20,
-              fontWeight: "bold",
+              paddingLeft: 10,
             }}
+            placeholder="Birthday(MM-DD-YYYY)"
+            returnKeyType="next"
+            maxLength={10}
           >
-            chamodi@gmail.com
-          </Text>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 20,
-            }}
-          >
-            Phone Number
-          </Text>
-          <Text
+            06-04-1997
+          </TextInput>
+          <TextInput
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -111,20 +110,14 @@ const updateProfile = ({ navigation }) => {
               borderColor: "#fafbfc",
               backgroundColor: "#fafbfc",
               fontSize: 20,
-              fontWeight: "bold",
+              paddingLeft: 10,
             }}
+            placeholder="E-mail"
+            returnKeyType="next"
           >
-            071XXXXXXX
-          </Text>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 20,
-            }}
-          >
-            Password
-          </Text>
-          <Text
+            natalie.e@gmail.com
+          </TextInput>
+          <TextInput
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -132,20 +125,15 @@ const updateProfile = ({ navigation }) => {
               borderColor: "#fafbfc",
               backgroundColor: "#fafbfc",
               fontSize: 20,
-              fontWeight: "bold",
+              paddingLeft: 10,
             }}
+            placeholder="Mobile"
+            returnKeyType="next"
+            maxLength={10}
           >
-            ........
-          </Text>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 20,
-            }}
-          >
-            Confirm Password
-          </Text>
-          <Text
+            0760000000
+          </TextInput>
+          <TextInput
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -153,22 +141,42 @@ const updateProfile = ({ navigation }) => {
               borderColor: "#fafbfc",
               backgroundColor: "#fafbfc",
               fontSize: 20,
-              fontWeight: "bold",
+              paddingLeft: 10,
             }}
+            placeholder="Password"
+            returnKeyType="next"
+            secureTextEntry={true}
           >
-            ........
-          </Text>
+            hellosliit123
+          </TextInput>
+          <TextInput
+            style={{
+              borderWidth: 1,
+              borderRadius: 10,
+              margin: 4,
+              borderColor: "#fafbfc",
+              backgroundColor: "#fafbfc",
+              fontSize: 20,
+              paddingLeft: 10,
+            }}
+            placeholder="Confirm Password"
+            returnKeyType="done"
+            secureTextEntry={true}
+          >
+            hellosliit123
+          </TextInput>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("userProfile")}>
           <View
             style={{
               backgroundColor: "#fcc221",
-              borderRadius: 10,
               height: 51,
-              width: "40%",
-              alignSelf: "flex-start",
+              borderTopRightRadius: 10,
+              borderTopLeftRadius: 30,
+              width: "50%",
+              alignSelf: "flex-end",
+              marginTop: 16,
               marginRight: 10,
-              marginTop: 10,
               justifyContent: "center",
             }}
           >
@@ -181,31 +189,6 @@ const updateProfile = ({ navigation }) => {
               }}
             >
               Update
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("userProfile")}>
-          <View
-            style={{
-              backgroundColor: "#fcc221",
-              borderRadius: 10,
-              height: 51,
-              width: "40%",
-              alignSelf: "flex-end",
-              justifyContent: "center",
-              marginBottom: 20,
-              marginRight: 10,
-            }}
-          >
-            <Text
-              style={{
-                alignSelf: "center",
-                margin: 11,
-                fontSize: 20,
-                color: "white",
-              }}
-            >
-              Cancle
             </Text>
           </View>
         </TouchableOpacity>
