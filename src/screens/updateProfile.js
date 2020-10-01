@@ -31,7 +31,7 @@ const updateProfile = ({ navigation }) => {
             style={{
               backgroundColor: "#fcc221",
               height: 45,
-              borderRadius: 20,
+              borderRadius: 10,
               width: "50%",
               alignSelf: "flex-end",
               marginRight: 10,
