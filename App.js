@@ -25,6 +25,7 @@ import badulla from "./src/screens/badulla";
 import galle from "./src/screens/galle";
 import ampara from "./src/screens/ampara";
 import anuradhapura from "./src/screens/anuradhapura";
+import updateProfile from "./src/screens/updateProfile";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -75,6 +76,7 @@ function App() {
         <Drawer.Screen name="galle" component={galle} />
         <Drawer.Screen name="ampara" component={ampara} />
         <Drawer.Screen name="anuradhapura" component={anuradhapura} />
+        <Drawer.Screen name="updateProfile" component={updateProfile} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
