@@ -15,7 +15,15 @@ const userProfile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
-        <View style={{ alignItems: "flex-end" }}>
+        <View
+          style={{
+            alignItems: "flex-end",
+            padding: 10,
+            backgroundColor: "#ffffff",
+            margin: 10,
+            borderRadius: 10,
+          }}
+        >
           <Image
             style={{
               width: 150,
@@ -23,7 +31,6 @@ const userProfile = ({ navigation }) => {
               borderRadius: 80,
               borderWidth: 2,
               borderColor: "#fcc221",
-              marginTop: 30,
             }}
             source={require("../../assets/images/user.jpg")}
           ></Image>
@@ -32,96 +39,152 @@ const userProfile = ({ navigation }) => {
           <Text
             style={{
               color: "#000",
-              fontSize: 35,
-              fontWeight: "900",
-              marginTop: 100,
-              marginLeft: 10,
+              fontSize: 30,
+              fontWeight: "bold",
+              marginTop: 45,
+              marginLeft: 23,
             }}
           >
             Natalie Eleanor
           </Text>
-        </View>
-
-        <TouchableOpacity onPress={() => navigation.navigate("updateProfile")}>
-          <View
-            style={{
-              backgroundColor: "#fcc221",
-              height: 45,
-              borderRadius: 20,
-              width: "50%",
-              alignSelf: "flex-start",
-              marginRight: 10,
-              marginTop: 1,
-              marginBottom: 20,
-              justifyContent: "center",
-            }}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("updateProfile")}
           >
-            <Text
+            <View
               style={{
+                backgroundColor: "#fcc221",
+                height: 40,
+                borderRadius: 40,
+                width: "70%",
                 alignSelf: "center",
-                margin: 11,
-                fontSize: 20,
-                color: "white",
+                marginLeft: 25,
               }}
             >
-              Edit Profile
-            </Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <View>
-            <Icon
-              name="image"
-              color={"#fcc221"}
-              style={{ alignSelf: "center" }}
-              size={55}
-            />
-            <View>
               <Text
-                style={{ alignSelf: "center", fontSize: 30, color: "#000" }}
+                style={{
+                  alignSelf: "center",
+                  fontSize: 20,
+                  color: "white",
+                  padding: 5,
+                }}
               >
-                My Travel Gallery
+                Edit Profile
               </Text>
             </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <View style={{ marginTop: 50 }}>
-            <Icon
-              name="map-pin"
-              color={"#fcc221"}
-              style={{ alignSelf: "center" }}
-              size={55}
-            />
-            <View>
-              <Text
-                style={{ alignSelf: "center", fontSize: 30, color: "#000" }}
-              >
-                My Travel History
-              </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            padding: 10,
+            backgroundColor: "#ffffff",
+            marginTop: 0,
+            margin: 10,
+            borderRadius: 10,
+          }}
+        >
+          <TouchableOpacity style={{ alignSelf: "center" }}>
+            <View
+              style={{
+                alignSelf: "center",
+                marginTop: 5,
+                width: 130,
+                height: 130,
+                borderRadius: 80,
+                backgroundColor: "#fafbfc",
+                borderWidth: 2,
+                borderColor: "#fcc221",
+              }}
+            >
+              <Icon
+                name="image"
+                color={"#fcc221"}
+                style={{ alignSelf: "center", marginTop: 20 }}
+                size={50}
+              />
+              <View>
+                <Text
+                  style={{
+                    alignSelf: "center",
+                    fontSize: 24,
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Gallery
+                </Text>
+              </View>
             </View>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <View style={{ marginTop: 60 }}>
-            <Icon
-              name="plus-circle"
-              color={"#fcc221"}
-              style={{ alignSelf: "center" }}
-              size={55}
-            />
-            <View>
-              <Text
-                style={{ alignSelf: "center", fontSize: 30, color: "#000" }}
-              >
-                New Plans
-              </Text>
+          <TouchableOpacity style={{ alignSelf: "center" }}>
+            <View
+              style={{
+                alignSelf: "center",
+                marginTop: 20,
+                width: 130,
+                height: 130,
+                borderRadius: 80,
+                backgroundColor: "#fafbfc",
+                borderWidth: 2,
+                borderColor: "#fcc221",
+              }}
+            >
+              <Icon
+                name="map-pin"
+                color={"#fcc221"}
+                style={{ alignSelf: "center", marginTop: 20 }}
+                size={50}
+              />
+              <View>
+                <Text
+                  style={{
+                    alignSelf: "center",
+                    fontSize: 24,
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                >
+                  History
+                </Text>
+              </View>
             </View>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ alignSelf: "center" }}>
+            <View
+              style={{
+                alignSelf: "center",
+                marginTop: 20,
+                width: 130,
+                height: 130,
+                borderRadius: 80,
+                backgroundColor: "#fafbfc",
+                borderWidth: 2,
+                borderColor: "#fcc221",
+                marginBottom: 5,
+              }}
+            >
+              <Icon
+                name="plus-circle"
+                color={"#fcc221"}
+                style={{ alignSelf: "center", marginTop: 20 }}
+                size={50}
+              />
+              <View>
+                <Text
+                  style={{
+                    alignSelf: "center",
+                    fontSize: 24,
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Plans
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
