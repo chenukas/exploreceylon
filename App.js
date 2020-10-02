@@ -31,6 +31,7 @@ import updateProfile from "./src/screens/updateProfile";
 import { AuthContext } from "./src/components/context";
 
 import RootStackScreen from "./src/screens/RootStackScreen";
+import signUpScreen from "./src/screens/signUpScreen";
 
 const Drawer = createDrawerNavigator();
 
