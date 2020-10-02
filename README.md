@@ -1,7 +1,22 @@
-# tour in Srilanka is a mobile app which is more useful for both local and foreign travellers.
+# Explore Ceylon
 
-# Using this app, the users can find the most famous places to visit and also details about accommodation
+This app is developed using react-native.
 
-# As well as they can create their profiles to maintain details about their trips, to create new plans and to create a gallery with memorable pictures
+This app is developed for User Experience Engineering Module in 3rd year to enhance knowledge to re-engineer current app using design principles to provide user a better user experience by having attarctive user interfaces.
 
-# There are maps to find where the exact location and nearby places as well.
+Using this app,
+
+-users can find the most famous places to visit and also details about accommodation
+
+-they can create their profiles to maintain details about their trips, to create new plans and to create a gallery with memorable pictures
+
+-there are maps to find where the exact location and nearby places as well.
+
+This is useful for both local and foreign travellers.
+
+To build after cloning,
+
+-npm install
+-npx react-native run-android
+
+- You need to keep opened android emulator or connect android mobile to pc.
