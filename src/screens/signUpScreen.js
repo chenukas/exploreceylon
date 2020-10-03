@@ -15,20 +15,7 @@ import Icon from "react-native-vector-icons/Feather";
 const signUpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View>
-        <View>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 30,
-              fontWeight: "bold",
-              marginTop: 10,
-              marginLeft: 20,
-            }}
-          >
-            Sign Up
-          </Text>
-        </View>
+      <View style={{ padding: 10 }}>
         <TouchableOpacity style={{ alignSelf: "center" }}>
           <View
             style={{
@@ -45,7 +32,7 @@ const signUpScreen = ({ navigation }) => {
             <Icon
               name="image"
               color={"#fcc221"}
-              style={{ alignSelf: "center", marginTop: 35 }}
+              style={{ alignSelf: "center", marginTop: 35, marginBottom: 35 }}
               size={50}
             />
           </View>
@@ -60,12 +47,12 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Name"
+            placeholder="Full Name"
             returnKeyType="next"
           ></TextInput>
 
@@ -76,12 +63,12 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Birthday"
+            placeholder="Birthday(MM-DD-YYYY)"
             returnKeyType="next"
           ></TextInput>
 
@@ -92,12 +79,12 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your E-mail"
+            placeholder="E-mail"
             returnKeyType="next"
           ></TextInput>
 
@@ -108,12 +95,12 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Phone Number"
+            placeholder="Mobile"
             returnKeyType="next"
           ></TextInput>
           <TextInput
@@ -123,13 +110,14 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Password"
+            placeholder="Password"
             returnKeyType="next"
+            secureTextEntry={true}
           ></TextInput>
           <TextInput
             style={{
@@ -138,22 +126,22 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
             placeholder="Confirm Password"
             returnKeyType="done"
+            secureTextEntry={true}
           ></TextInput>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate("userProfile")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
           <View
             style={{
               backgroundColor: "#fcc221",
-              borderColor: "#ffffff",
-              borderWidth: 2,
+              borderColor: "#fcc221",
               height: 51,
               width: 390,
               alignSelf: "center",
@@ -169,7 +157,7 @@ const signUpScreen = ({ navigation }) => {
                 color: "white",
               }}
             >
-              Sign-Up
+              Sign-up
             </Text>
           </View>
         </TouchableOpacity>

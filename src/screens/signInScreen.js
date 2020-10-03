@@ -96,13 +96,13 @@ const signInScreen = ({ navigation }) => {
               </Text>
             </View>
           </TouchableOpacity>
-          <View>
+          <View style={{ alignSelf: "flex-start", marginLeft: 45 }}>
             <Text
               style={{
                 color: "#000000",
                 fontSize: 20,
-                alignSelf: "center",
                 marginTop: 20,
+                position: "absolute",
               }}
             >
               Don't have an account?
@@ -115,7 +115,9 @@ const signInScreen = ({ navigation }) => {
                   fontSize: 20,
                   color: "white",
                   fontWeight: "bold",
-                  alignSelf: "center",
+                  alignSelf: "flex-end",
+                  marginTop: 20,
+                  marginLeft: 215,
                 }}
               >
                 Click here...
