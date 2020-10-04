@@ -2,9 +2,13 @@ import React from "react";
 import { View, StyleSheet, Image, ImageBackground, Text } from "react-native";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
+import { AuthContext } from "../components/context";
+
 import Icon from "react-native-vector-icons/Feather";
 
 export function DrawerContent(props) {
+  const { signOut } = React.useContext(AuthContext);
+
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -37,6 +41,15 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
+                <Icon name="map-pin" color={"#fcc221"} size={size} />
+              )}
+              label="View Cities"
+              onPress={() => {
+                props.navigation.navigate("searchCity");
+              }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
                 <Icon name="briefcase" color={"#fcc221"} size={size} />
               )}
               label="Bookings"
@@ -57,16 +70,6 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="map-pin" color={"#fcc221"} size={size} />
-              )}
-              label="View Cities"
-              onPress={() => {
-                props.navigation.navigate("searchCity");
-              }}
-            />
-
-            <DrawerItem
-              icon={({ color, size }) => (
                 <Icon name="heart" color={"#fcc221"} size={size} />
               )}
               label="Favorites"
@@ -82,6 +85,16 @@ export function DrawerContent(props) {
               label="Profile"
               onPress={() => {
                 props.navigation.navigate("userProfile");
+              }}
+            />
+
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon name="log-out" color={"#fcc221"} size={size} />
+              )}
+              label="Sign-out"
+              onPress={() => {
+                signOut();
               }}
             />
           </View>

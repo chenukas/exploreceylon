@@ -1,12 +1,13 @@
 import "react-native-gesture-handler";
 
 import * as React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { useEffect } from "react";
+import { View, TouchableOpacity, ActivityIndicator } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { SearchBar } from 'react-native-elements';
+import { SearchBar } from "react-native-elements";
 
 import NearCategory from "./src/screens/NearCategory";
 import { DrawerContent } from "./src/screens/DrawerContent";
@@ -27,7 +28,11 @@ import ampara from "./src/screens/ampara";
 import anuradhapura from "./src/screens/anuradhapura";
 import updateProfile from "./src/screens/updateProfile";
 
-const Stack = createStackNavigator();
+import { AuthContext } from "./src/components/context";
+
+import RootStackScreen from "./src/screens/RootStackScreen";
+import signUpScreen from "./src/screens/signUpScreen";
+
 const Drawer = createDrawerNavigator();
 
 const NavigationDrawerStructure = (props) => {
@@ -44,42 +49,80 @@ const NavigationDrawerStructure = (props) => {
   );
 };
 
-function App() {
+const App = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
+
+  const authContext = React.useMemo(() => ({
+    signIn: () => {
+      setUserToken("cxexuxa");
+      setIsLoading(false);
+    },
+    signOut: () => {
+      setUserToken(null);
+      setIsLoading(false);
+    },
+    signUp: () => {
+      setUserToken("cxexuxa");
+      setIsLoading(false);
+    },
+  }));
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(props) => <DrawerContent {...props} />}
-        drawerContentOptions={{
-          activeTintColor: "#e91e63",
-          itemStyle: { marginVertical: 5 },
-        }}
-      >
-        <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-        <Drawer.Screen name="NearCategory" component={NearCategory} />
-        <Drawer.Screen
-          name="searchNearestPlaces"
-          component={searchNearestPlaces}
-        />
-        <Drawer.Screen
-          name="Map"
-          component={Map}
-        />
-        <Drawer.Screen name="searchHotel" component={searchHotel} />
-        <Drawer.Screen name="leGrand" component={leGrand} />
-        <Drawer.Screen name="reserveHotel" component={reserveHotel} />
-        <Drawer.Screen name="payHotel" component={payHotel} />
-        <Drawer.Screen name="completedBooking" component={completedBooking} />
-        <Drawer.Screen name="userProfile" component={userProfile} />
-        <Drawer.Screen name="viewFavorites" component={viewFavorites} />
-        <Drawer.Screen name="searchCity" component={searchCity} />
-        <Drawer.Screen name="badulla" component={badulla} />
-        <Drawer.Screen name="galle" component={galle} />
-        <Drawer.Screen name="ampara" component={ampara} />
-        <Drawer.Screen name="anuradhapura" component={anuradhapura} />
-        <Drawer.Screen name="updateProfile" component={updateProfile} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        {userToken !== null ? (
+          <Drawer.Navigator
+            drawerContent={(props) => <DrawerContent {...props} />}
+            drawerContentOptions={{
+              activeTintColor: "#e91e63",
+              itemStyle: { marginVertical: 5 },
+            }}
+          >
+            <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+            <Drawer.Screen name="NearCategory" component={NearCategory} />
+            <Drawer.Screen
+              name="searchNearestPlaces"
+              component={searchNearestPlaces}
+            />
+            <Drawer.Screen name="Map" component={Map} />
+            <Drawer.Screen name="searchHotel" component={searchHotel} />
+            <Drawer.Screen name="leGrand" component={leGrand} />
+            <Drawer.Screen name="reserveHotel" component={reserveHotel} />
+            <Drawer.Screen name="payHotel" component={payHotel} />
+            <Drawer.Screen
+              name="completedBooking"
+              component={completedBooking}
+            />
+            <Drawer.Screen name="userProfile" component={userProfile} />
+            <Drawer.Screen name="viewFavorites" component={viewFavorites} />
+            <Drawer.Screen name="searchCity" component={searchCity} />
+            <Drawer.Screen name="badulla" component={badulla} />
+            <Drawer.Screen name="galle" component={galle} />
+            <Drawer.Screen name="ampara" component={ampara} />
+            <Drawer.Screen name="anuradhapura" component={anuradhapura} />
+            <Drawer.Screen name="updateProfile" component={updateProfile} />
+          </Drawer.Navigator>
+        ) : (
+          <RootStackScreen />
+        )}
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
-}
+};
 
 export default App;
