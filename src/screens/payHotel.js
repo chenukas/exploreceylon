@@ -25,7 +25,7 @@ const payHotel = ({ navigation }) => {
               backgroundColor: "#ffffff",
               borderRadius: 10,
               margin: 10,
-              height: 209,
+              height: 190,
             }}
           >
             <Text style={{ margin: 10, fontSize: 25, fontWeight: "bold" }}>
@@ -41,13 +41,13 @@ const payHotel = ({ navigation }) => {
                 fontSize: 45,
                 fontWeight: "bold",
                 alignSelf: "center",
-                margin: 12,
+                margin: 8,
                 color: "#fcc221",
               }}
             >
               $312.19
             </Text>
-            <Text style={{ margin: 10, alignSelf: "flex-end" }}>
+            <Text style={{ margin: 2, alignSelf: "flex-end", marginRight: 5 }}>
               *includes taxes and charges
             </Text>
           </View>
@@ -58,7 +58,7 @@ const payHotel = ({ navigation }) => {
               borderRadius: 10,
               marginRight: 10,
               marginLeft: 10,
-              height: 140,
+              height: 125,
               marginBottom: 10,
             }}
           >
@@ -69,12 +69,12 @@ const payHotel = ({ navigation }) => {
               <CheckBox
                 disabled={true}
                 onCheckColor={"#fcc221"}
-                style={{ margin: 5 }}
+                style={{ margin: 2 }}
               />
               <Text
                 style={{
                   position: "absolute",
-                  margin: 10,
+                  margin: 5,
                   marginLeft: 40,
                   fontSize: 15,
                 }}
@@ -86,12 +86,12 @@ const payHotel = ({ navigation }) => {
               <CheckBox
                 disabled={true}
                 onCheckColor={"#fcc221"}
-                style={{ margin: 5 }}
+                style={{ margin: 2 }}
               />
               <Text
                 style={{
                   position: "absolute",
-                  margin: 10,
+                  margin: 5,
                   marginLeft: 40,
                   fontSize: 15,
                 }}
@@ -107,7 +107,7 @@ const payHotel = ({ navigation }) => {
               borderRadius: 10,
               marginRight: 10,
               marginLeft: 10,
-              height: 230,
+              height: 220,
             }}
           >
             <View

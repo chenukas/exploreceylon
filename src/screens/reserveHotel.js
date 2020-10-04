@@ -25,7 +25,7 @@ const reserveHotel = ({ navigation }) => {
               backgroundColor: "#ffffff",
               borderRadius: 10,
               margin: 10,
-              height: 250,
+              height: 230,
             }}
           >
             <Text style={{ margin: 10, fontSize: 25, fontWeight: "bold" }}>
@@ -79,7 +79,7 @@ const reserveHotel = ({ navigation }) => {
               marginRight: 10,
               marginLeft: 10,
               marginBottom: 10,
-              height: 150,
+              height: 125,
             }}
           >
             <View
@@ -165,7 +165,7 @@ const reserveHotel = ({ navigation }) => {
               borderRadius: 10,
               marginRight: 10,
               marginLeft: 10,
-              height: 179,
+              height: 160,
             }}
           >
             <Text style={{ margin: 10, fontSize: 18, fontWeight: "bold" }}>
@@ -175,12 +175,12 @@ const reserveHotel = ({ navigation }) => {
               <CheckBox
                 disabled={true}
                 onCheckColor={"#fcc221"}
-                style={{ margin: 5 }}
+                style={{ margin: 2 }}
               />
               <Text
                 style={{
                   position: "absolute",
-                  margin: 10,
+                  margin: 5,
                   marginLeft: 40,
                   fontSize: 15,
                 }}
@@ -192,12 +192,12 @@ const reserveHotel = ({ navigation }) => {
               <CheckBox
                 disabled={true}
                 onCheckColor={"#fcc221"}
-                style={{ margin: 5 }}
+                style={{ margin: 2 }}
               />
               <Text
                 style={{
                   position: "absolute",
-                  margin: 10,
+                  margin: 5,
                   marginLeft: 40,
                   fontSize: 15,
                 }}
@@ -209,12 +209,12 @@ const reserveHotel = ({ navigation }) => {
               <CheckBox
                 disabled={true}
                 onCheckColor={"#fcc221"}
-                style={{ margin: 5 }}
+                style={{ margin: 2 }}
               />
               <Text
                 style={{
                   position: "absolute",
-                  margin: 10,
+                  margin: 5,
                   marginLeft: 40,
                   fontSize: 15,
                 }}
