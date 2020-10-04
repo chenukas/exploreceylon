@@ -46,7 +46,7 @@ const signInScreen = ({ navigation }) => {
               fontSize: 16,
               width: "95%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="E-mail"
@@ -60,47 +60,50 @@ const signInScreen = ({ navigation }) => {
               fontSize: 16,
               width: "95%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Password"
             returnKeyType="done"
             secureTextEntry={true}
           ></TextInput>
-          <TouchableOpacity
-            onPress={() => {
-              signIn();
+
+          <View
+            style={{
+              borderRadius: 10,
+              height: 50,
+              width: "95%",
+              backgroundColor: "#fcc221",
+              borderWidth: 1,
+              borderColor: "white",
+              marginTop: 15,
             }}
           >
-            <View
-              style={{
-                backgroundColor: "#fcc221",
-                borderColor: "#ffffff",
-                borderWidth: 2,
-                height: 51,
-                width: 390,
-                alignSelf: "center",
-                borderRadius: 10,
-                marginTop: 20,
+            <TouchableOpacity
+              onPress={() => {
+                signIn();
               }}
             >
-              <Text
-                style={{
-                  alignSelf: "center",
-                  margin: 11,
-                  fontSize: 20,
-                  color: "white",
-                }}
-              >
-                Sign-in
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <View style={{ alignSelf: "flex-start", marginLeft: 45 }}>
+              <View>
+                <Text
+                  style={{
+                    alignSelf: "center",
+                    margin: 10,
+                    fontSize: 20,
+                    color: "white",
+                  }}
+                >
+                  Sign-in
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{ alignSelf: "center" }}>
             <Text
               style={{
                 color: "#000000",
-                fontSize: 20,
+                fontSize: 16,
                 marginTop: 20,
                 position: "absolute",
               }}
@@ -112,12 +115,12 @@ const signInScreen = ({ navigation }) => {
             >
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 16,
                   color: "white",
                   fontWeight: "bold",
                   alignSelf: "flex-end",
                   marginTop: 20,
-                  marginLeft: 215,
+                  marginLeft: 170,
                 }}
               >
                 Click here...
