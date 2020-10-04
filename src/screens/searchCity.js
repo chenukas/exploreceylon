@@ -77,12 +77,14 @@ const searchCity = ({ navigation }) => {
         value={search}
       />
       <ScrollView>
+        <View>
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
           renderItem={ItemView}
         />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
