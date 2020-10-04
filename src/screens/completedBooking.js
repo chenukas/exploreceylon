@@ -18,7 +18,7 @@ const completedBooking = ({ navigation }) => {
         <Text
           style={{
             alignSelf: "center",
-            marginTop: 300,
+            marginTop: 275,
             fontSize: 26,
             fontWeight: "bold",
           }}
