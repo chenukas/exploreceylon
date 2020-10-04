@@ -2,18 +2,18 @@
 // https://aboutreact.com/react-native-search-bar-filter-on-listview/
 
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, View, FlatList, ScrollView, TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { cityData } from '../data/citiesData';
 
-const App = () => {
+const searchCity = ({ navigation }) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-        setFilteredDataSource(cityData);
-        setMasterDataSource(cityData);
+    setFilteredDataSource(cityData);
+    setMasterDataSource(cityData);
   }, []);
 
   const searchFilterFunction = (text) => {
@@ -39,12 +39,15 @@ const App = () => {
     }
   };
 
-  const ItemView = ({ item }) => {
+  const ItemView = ({ item,navigation }) => {
     return (
       // Flat List Item
-      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
-        {item.title.toUpperCase()}
-      </Text>
+      <TouchableOpacity onPress={() => navigation.navigate("badulla")} style={styles.cards}>
+        <Text>
+          {item.title.toUpperCase()}
+        </Text>
+      </TouchableOpacity>
+
     );
   };
 
@@ -63,24 +66,24 @@ const App = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-       <Text style={styles.titleText}>Search a City</Text>
-       <SearchBar
-          round
-          searchIcon={{ size: 24 }}
-          onChangeText={(text) => searchFilterFunction(text)}
-          onClear={(text) => searchFilterFunction('')}
-          placeholder="Type Here..."
-          value={search}
-        />
-      <View>
+      <Text style={styles.titleText}>Search a City</Text>
+      <SearchBar
+        round
+        lightTheme
+        searchIcon={{ size: 24 }}
+        onChangeText={(text) => searchFilterFunction(text)}
+        onClear={(text) => searchFilterFunction('')}
+        placeholder="Type Here..."
+        value={search}
+      />
+      <ScrollView>
         <FlatList
-        
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
           renderItem={ItemView}
         />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -111,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default searchCity;
