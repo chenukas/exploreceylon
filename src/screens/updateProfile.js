@@ -20,7 +20,7 @@ const updateProfile = ({ navigation }) => {
         <View style={{ height: height - 75 }}>
           <View
             style={{
-              height: 180,
+              height: 160,
               backgroundColor: "#ffffff",
               margin: 10,
               borderRadius: 10,
@@ -32,20 +32,20 @@ const updateProfile = ({ navigation }) => {
               <View
                 style={{
                   backgroundColor: "#fcc221",
-                  height: 45,
+                  height: 40,
                   borderRadius: 40,
-                  width: "50%",
+                  width: "45%",
                   alignSelf: "flex-end",
-                  marginTop: 65,
-                  marginRight: 15,
+                  marginTop: 60,
+                  marginRight: 20,
                   justifyContent: "center",
                 }}
               >
                 <Text
                   style={{
                     alignSelf: "center",
-                    margin: 11,
-                    fontSize: 20,
+                    margin: 10,
+                    fontSize: 18,
                     color: "white",
                   }}
                 >
@@ -55,8 +55,8 @@ const updateProfile = ({ navigation }) => {
             </TouchableOpacity>
             <Image
               style={{
-                width: 150,
-                height: 150,
+                width: 130,
+                height: 130,
                 borderRadius: 80,
                 borderWidth: 2,
                 borderColor: "#fcc221",
@@ -82,7 +82,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="Full Name"
@@ -97,7 +97,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="Birthday(MM-DD-YYYY)"
@@ -113,7 +113,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="E-mail"
@@ -128,7 +128,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="Mobile"
@@ -144,7 +144,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="Password"
@@ -160,7 +160,7 @@ const updateProfile = ({ navigation }) => {
                 margin: 4,
                 borderColor: "#fafbfc",
                 backgroundColor: "#fafbfc",
-                fontSize: 20,
+                fontSize: 16,
                 paddingLeft: 10,
               }}
               placeholder="Confirm Password"
@@ -180,7 +180,6 @@ const updateProfile = ({ navigation }) => {
               borderTopLeftRadius: 30,
               width: "50%",
               alignSelf: "flex-end",
-              marginTop: 16,
               marginRight: 10,
               justifyContent: "center",
             }}
