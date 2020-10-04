@@ -15,27 +15,14 @@ import Icon from "react-native-vector-icons/Feather";
 const signUpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View>
-        <View>
-          <Text
-            style={{
-              color: "#000000",
-              fontSize: 30,
-              fontWeight: "bold",
-              marginTop: 10,
-              marginLeft: 20,
-            }}
-          >
-            Sign Up
-          </Text>
-        </View>
+      <View style={{ padding: 10 }}>
         <TouchableOpacity style={{ alignSelf: "center" }}>
           <View
             style={{
               alignSelf: "center",
-              marginTop: 20,
-              width: 130,
-              height: 130,
+              marginTop: 25,
+              width: 100,
+              height: 100,
               borderRadius: 80,
               backgroundColor: "#fafbfc",
               borderWidth: 2,
@@ -45,8 +32,8 @@ const signUpScreen = ({ navigation }) => {
             <Icon
               name="image"
               color={"#fcc221"}
-              style={{ alignSelf: "center", marginTop: 35 }}
-              size={50}
+              style={{ alignSelf: "center", marginTop: 27.5 }}
+              size={40}
             />
           </View>
         </TouchableOpacity>
@@ -55,17 +42,17 @@ const signUpScreen = ({ navigation }) => {
           <TextInput
             style={{
               borderRadius: 10,
-              marginTop: 20,
+              marginTop: 25,
               marginBottom: 10,
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
               height: 51,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Name"
+            placeholder="Full Name"
             returnKeyType="next"
           ></TextInput>
 
@@ -76,12 +63,29 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Birthday"
+            placeholder="Birthday(MM-DD-YYYY)"
+            returnKeyType="next"
+            maxLength={10}
+          ></TextInput>
+
+          <TextInput
+            style={{
+              borderRadius: 10,
+              marginBottom: 10,
+              borderColor: "#fcc221",
+              backgroundColor: "#fafbfc",
+              fontSize: 16,
+              width: "100%",
+              alignSelf: "center",
+              height: 50,
+              paddingLeft: 10,
+            }}
+            placeholder="E-mail"
             returnKeyType="next"
           ></TextInput>
 
@@ -92,29 +96,14 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your E-mail"
+            placeholder="Mobile"
             returnKeyType="next"
-          ></TextInput>
-
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "95%",
-              alignSelf: "center",
-              height: 51,
-              paddingLeft: 10,
-            }}
-            placeholder="Enter Your Phone Number"
-            returnKeyType="next"
+            maxLength={10}
           ></TextInput>
           <TextInput
             style={{
@@ -123,13 +112,14 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
-            placeholder="Enter Your Password"
+            placeholder="Password"
             returnKeyType="next"
+            secureTextEntry={true}
           ></TextInput>
           <TextInput
             style={{
@@ -138,24 +128,24 @@ const signUpScreen = ({ navigation }) => {
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
               fontSize: 16,
-              width: "95%",
+              width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Confirm Password"
             returnKeyType="done"
+            secureTextEntry={true}
           ></TextInput>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate("userProfile")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
           <View
             style={{
               backgroundColor: "#fcc221",
-              borderColor: "#ffffff",
-              borderWidth: 2,
-              height: 51,
-              width: 390,
+              borderColor: "#fcc221",
+              height: 50,
+              width: "100%",
               alignSelf: "center",
               borderRadius: 10,
               marginTop: 20,
@@ -169,7 +159,7 @@ const signUpScreen = ({ navigation }) => {
                 color: "white",
               }}
             >
-              Sign-Up
+              Sign-up
             </Text>
           </View>
         </TouchableOpacity>
