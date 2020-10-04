@@ -26,8 +26,8 @@ const userProfile = ({ navigation }) => {
         >
           <Image
             style={{
-              width: 150,
-              height: 150,
+              width: 135,
+              height: 135,
               borderRadius: 80,
               borderWidth: 2,
               borderColor: "#fcc221",
@@ -39,7 +39,7 @@ const userProfile = ({ navigation }) => {
           <Text
             style={{
               color: "#000",
-              fontSize: 25,
+              fontSize: 20,
               fontWeight: "bold",
               marginTop: 25,
               marginLeft: 23,
