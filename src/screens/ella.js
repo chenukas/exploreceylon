@@ -10,26 +10,12 @@ import {
     Dimensions,
 } from "react-native";
 
-const badulla = ({ navigation }) => {
+const ella = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text style={styles.titleText}>Choose a Place</Text>
+            <Text style={styles.titleText}>Ella</Text>
             <ScrollView>
-                <TouchableOpacity style={styles.cards}>
-                    <Text>
-                        Diyaluma
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ella")} style={styles.cards}>
-                    <Text>
-                        Ella
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity  style={styles.cards}>
-                    <Text>
-                        Ravana
-                    </Text>
-                </TouchableOpacity>
+                
             </ScrollView>
         </SafeAreaView>
     );
@@ -62,4 +48,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default badulla;
+export default ella;

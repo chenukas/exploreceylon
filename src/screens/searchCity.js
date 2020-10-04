@@ -6,7 +6,7 @@ import { SafeAreaView, Text, StyleSheet, View, FlatList, ScrollView, TouchableOp
 import { SearchBar } from 'react-native-elements';
 import { cityData } from '../data/citiesData';
 
-const App = () => {
+const searchCity = ({ navigation }) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -39,7 +39,7 @@ const App = () => {
     }
   };
 
-  const ItemView = ({ item }) => {
+  const ItemView = ({ item,navigation }) => {
     return (
       // Flat List Item
       <TouchableOpacity onPress={() => navigation.navigate("badulla")} style={styles.cards}>
@@ -78,7 +78,6 @@ const App = () => {
       />
       <ScrollView>
         <FlatList
-
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
@@ -115,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default searchCity;
