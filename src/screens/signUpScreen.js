@@ -20,9 +20,9 @@ const signUpScreen = ({ navigation }) => {
           <View
             style={{
               alignSelf: "center",
-              marginTop: 20,
-              width: 130,
-              height: 130,
+              marginTop: 25,
+              width: 100,
+              height: 100,
               borderRadius: 80,
               backgroundColor: "#fafbfc",
               borderWidth: 2,
@@ -32,8 +32,8 @@ const signUpScreen = ({ navigation }) => {
             <Icon
               name="image"
               color={"#fcc221"}
-              style={{ alignSelf: "center", marginTop: 35, marginBottom: 35 }}
-              size={50}
+              style={{ alignSelf: "center", marginTop: 27.5 }}
+              size={40}
             />
           </View>
         </TouchableOpacity>
@@ -42,7 +42,7 @@ const signUpScreen = ({ navigation }) => {
           <TextInput
             style={{
               borderRadius: 10,
-              marginTop: 20,
+              marginTop: 25,
               marginBottom: 10,
               borderColor: "#fcc221",
               backgroundColor: "#fafbfc",
@@ -65,11 +65,12 @@ const signUpScreen = ({ navigation }) => {
               fontSize: 16,
               width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Birthday(MM-DD-YYYY)"
             returnKeyType="next"
+            maxLength={10}
           ></TextInput>
 
           <TextInput
@@ -81,7 +82,7 @@ const signUpScreen = ({ navigation }) => {
               fontSize: 16,
               width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="E-mail"
@@ -97,11 +98,12 @@ const signUpScreen = ({ navigation }) => {
               fontSize: 16,
               width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Mobile"
             returnKeyType="next"
+            maxLength={10}
           ></TextInput>
           <TextInput
             style={{
@@ -112,7 +114,7 @@ const signUpScreen = ({ navigation }) => {
               fontSize: 16,
               width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Password"
@@ -128,7 +130,7 @@ const signUpScreen = ({ navigation }) => {
               fontSize: 16,
               width: "100%",
               alignSelf: "center",
-              height: 51,
+              height: 50,
               paddingLeft: 10,
             }}
             placeholder="Confirm Password"
@@ -142,8 +144,8 @@ const signUpScreen = ({ navigation }) => {
             style={{
               backgroundColor: "#fcc221",
               borderColor: "#fcc221",
-              height: 51,
-              width: 390,
+              height: 50,
+              width: "100%",
               alignSelf: "center",
               borderRadius: 10,
               marginTop: 20,
