@@ -7,31 +7,42 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  Dimensions,
 } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const NearCategory = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flexGrow: 1, height: "100%" }}>
-        <ScrollView>
+        <ScrollView
+          style={{
+            width: width - 10,
+            alignSelf: "center",
+            borderRadius: 10,
+            backgroundColor: "#ffffff",
+            margin: 10,
+          }}
+        >
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
-                <Image
-                  source={require("../../assets/hotel1.png")}
-                  style={styles.image}
-                />
+              <Image
+                source={require("../../assets/images/015-hotel.png")}
+                style={styles.image}
+              />
             </View>
 
             <View style={styles.imageView}>
-                <Image
-                  source={require("../../assets/restuarant.png")}
-                  style={styles.image}
-                />
-              </View>
-            
+              <Image
+                source={require("../../assets/images/028-restaurant.png")}
+                style={styles.image}
+              />
+            </View>
+
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/atm.png")}
+                source={require("../../assets/images/002-atm.png")}
                 style={styles.image}
               />
             </View>
@@ -39,40 +50,40 @@ const NearCategory = ({ navigation }) => {
           <View style={styles.textContainer}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 45,
+                marginLeft: 40,
               }}
             >
-              Hotel
+              Hotels
             </Text>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 70,
+                marginLeft: 60,
               }}
             >
-              Restaurant
+              Restaurants
             </Text>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 70,
+                marginLeft: 60,
               }}
             >
-              ATM
+              ATMs
             </Text>
           </View>
 
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/hospital.png")}
+                source={require("../../assets/images/014-hospital.png")}
                 style={styles.image}
               />
             </View>
@@ -81,17 +92,16 @@ const NearCategory = ({ navigation }) => {
               onPress={() => navigation.navigate("searchNearestPlaces")}
             >
               <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/super.png")}
-                style={styles.image}
-              />
+                <Image
+                  source={require("../../assets/images/032-shopping.png")}
+                  style={styles.image}
+                />
               </View>
-
             </TouchableOpacity>
-            
+
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/bus.png")}
+                source={require("../../assets/images/004-bus-stop.png")}
                 style={styles.image}
               />
             </View>
@@ -99,52 +109,52 @@ const NearCategory = ({ navigation }) => {
           <View style={styles.textContainer}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 35,
+                marginLeft: 30,
               }}
             >
-              Hospital
+              Hospitals
             </Text>
             <Text
               style={{
-                fontSize: 18,
-                color: "#000",
-                fontWeight: "bold",
-                marginLeft: 50,
-              }}
-            >
-              Super Market
-            </Text>
-            <Text
-              style={{
-                fontSize: 18,
+                fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
                 marginLeft: 30,
               }}
             >
-              Bus Station
+              Super Markets
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#000",
+                fontWeight: "bold",
+                marginLeft: 20,
+              }}
+            >
+              Bus Stations
             </Text>
           </View>
 
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/park.png")}
+                source={require("../../assets/images/023-parking.png")}
                 style={styles.image}
               />
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/pharmacy.png")}
+                source={require("../../assets/images/026-police-station.png")}
                 style={styles.image}
               />
             </View>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/petrol.png")}
+                source={require("../../assets/images/024-petrol-station.png")}
                 style={styles.image}
               />
             </View>
@@ -152,40 +162,52 @@ const NearCategory = ({ navigation }) => {
           <View style={styles.textContainer}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
+                marginLeft: 30,
+              }}
+            >
+              Parkings
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#000",
+                fontWeight: "bold",
                 marginLeft: 35,
               }}
             >
-              Parking
+              Police Stations
             </Text>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 60,
+                marginLeft: 15,
               }}
             >
-              Pharmacy
-            </Text>
-            <Text
-              style={{
-                fontSize: 18,
-                color: "#000",
-                fontWeight: "bold",
-                marginLeft: 50,
-              }}
-            >
-              Petrol Shed
+              Petrol Sheds
             </Text>
           </View>
 
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
-                source={require("../../assets/rail.png")}
+                source={require("../../assets/images/036-train.png")}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.imageView}>
+              <Image
+                source={require("../../assets/images/001-airport.png")}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.imageView}>
+              <Image
+                source={require("../../assets/images/011-education.png")}
                 style={styles.image}
               />
             </View>
@@ -193,14 +215,33 @@ const NearCategory = ({ navigation }) => {
           <View style={styles.textContainer}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 15,
-                marginBottom: 20,
+                marginLeft: 5,
               }}
             >
-              Railway Station
+              Railway Stations
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#000",
+                fontWeight: "bold",
+                marginLeft: 25,
+              }}
+            >
+              Airports
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#000",
+                fontWeight: "bold",
+                marginLeft: 65,
+              }}
+            >
+              Schools
             </Text>
           </View>
         </ScrollView>
@@ -221,6 +262,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     flexDirection: "row",
     marginTop: 10,
+    alignSelf: "center",
   },
   textContainer: {
     flexDirection: "row",
@@ -232,8 +274,8 @@ const styles = StyleSheet.create({
     left: 30,
   },
   imageView: {
-    width: 120,
-    height: 120,
+    width: 100,
+    height: 100,
     borderWidth: 1,
     borderRadius: 70,
     borderColor: "#fff",
@@ -241,9 +283,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fcc221",
   },
   image: {
-    width: 120,
-    height: 120,
+    width: 90,
+    height: 90,
     borderRadius: 70,
+    alignSelf: "center",
+    marginTop: 5,
   },
   ImageText: {
     position: "absolute",

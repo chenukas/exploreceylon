@@ -1,5 +1,14 @@
 import * as React from "react";
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  Dimensions,
+} from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const Map = () => {
   return (
@@ -11,8 +20,8 @@ const Map = () => {
         <View>
           <Image
             style={{
-              width: 405,
-              height: 590,
+              width: width - 10,
+              height: height - 90,
               borderWidth: 2,
               borderRadius: 10,
               borderColor: "#fcc221",
@@ -30,7 +39,7 @@ export default Map;
 
 const styles = StyleSheet.create({
   Text: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold",
     margin: 10,
     textAlign: "center",

@@ -143,7 +143,7 @@ export default class searchNearestPlaces extends React.Component {
             <Icon
               name="search"
               color={"#000"}
-              style={{ marginTop: 10, marginLeft: 255 }}
+              style={{ marginTop: 10, marginLeft: 250 }}
               size={30}
               color={"#fcc221"}
             />
@@ -158,7 +158,7 @@ export default class searchNearestPlaces extends React.Component {
                         flex: 1,
                         height: 50,
                         borderRadius: 10,
-                        borderWidth: 2,
+                        borderWidth: 1,
                         borderColor: "#fcc221",
                         width: "100%",
                         alignSelf: "center",
