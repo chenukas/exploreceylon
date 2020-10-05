@@ -42,7 +42,6 @@ const userProfile = ({ navigation }) => {
               fontSize: 20,
               fontWeight: "bold",
               marginTop: 25,
-              marginLeft: 23,
               alignSelf: "center",
             }}
           >
@@ -50,9 +49,8 @@ const userProfile = ({ navigation }) => {
           </Text>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 15,
               marginTop: 4,
-
               alignSelf: "center",
             }}
           >
@@ -60,7 +58,7 @@ const userProfile = ({ navigation }) => {
           </Text>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 15,
               marginTop: 4,
               alignSelf: "center",
               marginBottom: 10,
