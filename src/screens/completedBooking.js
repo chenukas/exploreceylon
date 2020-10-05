@@ -18,7 +18,7 @@ const completedBooking = ({ navigation }) => {
         <Text
           style={{
             alignSelf: "center",
-            marginTop: 275,
+            marginTop: 250,
             fontSize: 26,
             fontWeight: "bold",
           }}
@@ -29,7 +29,7 @@ const completedBooking = ({ navigation }) => {
           name="check-circle"
           color={"#42e342"}
           style={{ alignSelf: "center" }}
-          size={45}
+          size={40}
         />
       </View>
     </SafeAreaView>

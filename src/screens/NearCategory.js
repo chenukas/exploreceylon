@@ -53,7 +53,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 40,
+                marginLeft: 0,
               }}
             >
               Hotels
@@ -63,7 +63,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 60,
+                marginLeft: 50,
               }}
             >
               Restaurants
@@ -112,7 +112,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 30,
+                marginLeft: 10,
               }}
             >
               Hospitals
@@ -165,7 +165,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 30,
+                marginLeft: 10,
               }}
             >
               Parkings
@@ -185,7 +185,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 15,
+                marginLeft: 20,
               }}
             >
               Petrol Sheds
@@ -218,17 +218,17 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 fontWeight: "bold",
                 color: "#000",
-                marginLeft: 5,
+                marginLeft: 0,
               }}
             >
-              Railway Stations
+              Railways
             </Text>
             <Text
               style={{
                 fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 25,
+                marginLeft: 55,
               }}
             >
               Airports
@@ -238,7 +238,7 @@ const NearCategory = ({ navigation }) => {
                 fontSize: 15,
                 color: "#000",
                 fontWeight: "bold",
-                marginLeft: 65,
+                marginLeft: 60,
               }}
             >
               Schools
@@ -267,6 +267,7 @@ const styles = StyleSheet.create({
   textContainer: {
     flexDirection: "row",
     marginTop: 5,
+    alignSelf: "center",
   },
   Text: {
     fontSize: 14,
