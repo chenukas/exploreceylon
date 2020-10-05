@@ -7,7 +7,10 @@ import {
   ImageBackground,
   StyleSheet,
   ScrollView,
+  Dimensions,
 } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -45,139 +48,141 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <ScrollView>
-          <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/sigiriya.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Sigiriya</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/mirissa.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Mirissa</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/ella.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Ella</Text>
-            </View>
-          </View>
-
-          <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/anuradhapura.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Anuradhapura</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/diyaluma.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Haputale</Text>
+          <View style={{ width: width - 10, alignSelf: "center" }}>
+            <View style={styles.imageContainer}>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/sigiriya.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Sigiriya</Text>
+              </View>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/mirissa.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Mirissa</Text>
+              </View>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/ella.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Ella</Text>
+              </View>
             </View>
 
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/galle.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Galle</Text>
-            </View>
-          </View>
+            <View style={styles.imageContainer}>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/anuradhapura.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Anuradhapura</Text>
+              </View>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/diyaluma.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Haputale</Text>
+              </View>
 
-          <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/hikkaduwa.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Hikkaduwa</Text>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/galle.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Galle</Text>
+              </View>
             </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/hortonplains.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Horton Plains</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/nuwaraeliya.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Nuwara Eliya</Text>
+
+            <View style={styles.imageContainer}>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/hikkaduwa.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Hikkaduwa</Text>
+              </View>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/hortonplains.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Horton Plains</Text>
+              </View>
+              <View style={styles.imageView}>
+                <Image
+                  source={require("../../assets/images/nuwaraeliya.jpg")}
+                  style={styles.image}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Icon
+                  name="location-on"
+                  size={16}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <Text style={styles.ImageText}>Nuwara Eliya</Text>
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -197,15 +202,11 @@ const styles = StyleSheet.create({
   },
   DarkOverlay: {
     position: "absolute",
-    top: 5,
-    right: 5,
-    left: 7,
+
+    margin: 10,
     height: 100,
-    width: "97%",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    width: "95%",
+    borderRadius: 20,
     backgroundColor: "#fcc221",
     alignSelf: "center",
   },
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   ImageOverlay: {
-    width: 130,
+    width: 110,
     height: 250,
     marginRight: 8,
     borderRadius: 10,
@@ -248,7 +249,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   imageView: {
-    width: 130,
+    width: 110,
     height: 250,
     borderWidth: 1,
     borderColor: "#fff",
