@@ -27,7 +27,7 @@ const Map = () => {
               borderColor: "#fcc221",
               alignSelf: "center",
             }}
-            source={require("../../assets/images/map.png")}
+            source={require("../../assets/images/map.jpg")}
           />
         </View>
       </View>
