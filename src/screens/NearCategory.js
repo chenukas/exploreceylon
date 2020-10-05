@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flexDirection: "row",
-    marginTop: 10,
+    marginTop: 12,
     alignSelf: "center",
   },
   textContainer: {
