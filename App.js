@@ -7,7 +7,7 @@ import { View, TouchableOpacity, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { SearchBar } from "react-native-elements";
+import { SearchBar, Button } from "react-native-elements";
 
 import NearCategory from "./src/screens/NearCategory";
 import { DrawerContent } from "./src/screens/DrawerContent";

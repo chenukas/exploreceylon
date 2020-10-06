@@ -50,7 +50,7 @@ const badulla = ({ navigation }) => {
                     }}
                 >
                     <Image
-                        source={require("../../assets/images/namunukula.jpg")}
+                        source={require("../../assets/images/namunukula.jpeg")}
                         style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
                     ></Image>
                     <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
