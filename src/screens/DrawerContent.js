@@ -43,7 +43,7 @@ export function DrawerContent(props) {
               icon={({ color, size }) => (
                 <Icon name="map-pin" color={"#fcc221"} size={size} />
               )}
-              label="View Cities"
+              label="Cities"
               onPress={() => {
                 props.navigation.navigate("searchCity");
               }}

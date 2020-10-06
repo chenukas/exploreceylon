@@ -34,7 +34,7 @@ const data = [
     city: "Dambulla",
   },
   {
-    city: "Damdeniya",
+    city: "Dambadeniya",
   },
   {
     city: "Ella",
@@ -49,7 +49,7 @@ const data = [
     city: "Hambanthota",
   },
   {
-    city: "Haton",
+    city: "Hatton",
   },
   {
     city: "Jaffna",
@@ -58,22 +58,22 @@ const data = [
     city: "Ja-Ela",
   },
   {
-    city: "Kaluthara",
+    city: "Kalutara",
   },
   {
     city: "Kandy",
   },
   {
-    city: "Kurunagala",
+    city: "Kurunegala",
   },
   {
     city: "Monaragala",
   },
   {
-    city: "Mannarama",
+    city: "Mannar",
   },
   {
-    city: "NuwaraEliya",
+    city: "Nuwara Eliya",
   },
   {
     city: "Negambo",
@@ -85,7 +85,7 @@ const data = [
     city: "Pinnawala",
   },
   {
-    city: "Rathnapura",
+    city: "Ratnapura",
   },
   {
     city: "Sigiriya",
@@ -100,10 +100,10 @@ const data = [
     city: "Udawalawa",
   },
   {
-    city: "Wallawatte",
+    city: "Wellawatte",
   },
   {
-    city: "Waththala",
+    city: "Wattala",
   },
 ];
 
