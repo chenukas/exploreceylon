@@ -1,93 +1,191 @@
-// Searching using Search Bar Filter in React Native List View
-// https://aboutreact.com/react-native-search-bar-filter-on-listview/
+import * as React from "react";
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, View, FlatList, ScrollView, TouchableOpacity } from 'react-native';
-import { SearchBar } from 'react-native-elements';
-import { cityData } from '../data/citiesData';
+import Icon from "react-native-vector-icons/MaterialIcons";
 
-const searchCity = ({ navigation }) => {
-  const [search, setSearch] = useState('');
-  const [filteredDataSource, setFilteredDataSource] = useState([]);
-  const [masterDataSource, setMasterDataSource] = useState([]);
+const data = [
+  {
+    city: "Anuradhapura",
+  },
+  {
+    city: "Ambalangoda",
+  },
+  {
+    city: "Ampara",
+  },
+  {
+    city: "Balangoda",
+  },
+  {
+    city: "Badulla",
+  },
+  {
+    city: "Colombo",
+  },
+  {
+    city: "Dambulla",
+  },
+  {
+    city: "Damdeniya",
+  },
+  {
+    city: "Ella",
+  },
+  {
+    city: "Galle",
+  },
+  {
+    city: "Gampaha",
+  },
+  {
+    city: "Hambanthota",
+  },
+  {
+    city: "Haton",
+  },
+  {
+    city: "Jaffna",
+  },
+  {
+    city: "Ja-Ela",
+  },
+  {
+    city: "Kaluthara",
+  },
+  {
+    city: "Kandy",
+  },
+  {
+    city: "Kurunagala",
+  },
+  {
+    city: "Monaragala",
+  },
+  {
+    city: "Mannarama",
+  },
+  {
+    city: "NuwaraEliya",
+  },
+  {
+    city: "Negambo",
+  },
+  {
+    city: "Puttalam",
+  },
+  {
+    city: "Pinnawala",
+  },
+  {
+    city: "Rathnapura",
+  },
+  {
+    city: "Sigiriya",
+  },
+  {
+    city: "Seethawaka",
+  },
+  {
+    city: "Trincomalee",
+  },
+  {
+    city: "Udawalawa",
+  },
+  {
+    city: "Wallawatte",
+  },
+  {
+    city: "Waththala",
+  },
+];
 
-  useEffect(() => {
-    setFilteredDataSource(cityData);
-    setMasterDataSource(cityData);
-  }, []);
+export default class searchCity extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchKey: "",
+    };
+  }
 
-  const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
-    if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
-      const newData = masterDataSource.filter(function (item) {
-        const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
-        const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
-      });
-      setFilteredDataSource(newData);
-      setSearch(text);
-    } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
-      setFilteredDataSource(masterDataSource);
-      setSearch(text);
-    }
-  };
+  render() {
+    const { navigate } = this.props.navigation;
+    const filteredData = data.filter((item) => {
+      return item.city.indexOf(this.state.searchKey) >= 0;
+    });
 
-  const ItemView = ({ item,navigation }) => {
     return (
-      // Flat List Item
-      <TouchableOpacity onPress={() => navigation.navigate("badulla")} style={styles.cards}>
-        <Text>
-          {item.title.toUpperCase()}
-        </Text>
-      </TouchableOpacity>
-
-    );
-  };
-
-  const ItemSeparatorView = () => {
-    return (
-      // Flat List Item Separator
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    );
-  };
-
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Text style={styles.titleText}>Search a City</Text>
-      <SearchBar
-        round
-        lightTheme
-        searchIcon={{ size: 24 }}
-        onChangeText={(text) => searchFilterFunction(text)}
-        onClear={(text) => searchFilterFunction('')}
-        placeholder="Type Here..."
-        value={search}
-      />
-      <ScrollView>
-        <View>
-        <FlatList
-          data={filteredDataSource}
-          keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
-        />
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={{ flex: 1, padding: 16 }}>
+        <Text style={styles.titleText}>Search a City</Text>
+          <View
+            searchBar
+            rounded
+            style={{
+              flexDirection: "row",
+              borderRadius: 10,
+              borderColor: "#000",
+              backgroundColor: "#fafbfc",
+              width: "100%",
+            }}
+          >
+            <TextInput
+              placeholder="Search here"
+              onChangeText={(value) => this.setState({ searchKey: value })}
+              style={{ fontSize: 16, paddingLeft: 10 }}
+            ></TextInput>
+            <Icon
+              name="search"
+              color={"#000"}
+              style={{ marginTop: 10, marginLeft: 255 }}
+              size={30}
+              color={"#fcc221"}
+            />
+          </View>
+          <ScrollView>
+            <TouchableOpacity onPress={() => navigate("badulla")}>
+              <View style={{ marginTop: 10 }}>
+                {filteredData.map((item, index) => {
+                  return (
+                    <View
+                      style={{
+                        flex: 1,
+                        height: 50,
+                        borderRadius: 10,
+                        borderWidth: 2,
+                        borderColor: "#fcc221",
+                        width: "100%",
+                        alignSelf: "center",
+                        marginBottom: 10,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 20,
+                          color: "#000",
+                          marginLeft: 10,
+                          marginTop: 7,
+                        }}
+                      >
+                        {item.city}
+                      </Text>
+                    </View>
+                  );
+                })}
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+      </SafeAreaView>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
@@ -115,5 +213,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
 });
-
-export default searchCity;
