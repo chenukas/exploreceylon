@@ -15,7 +15,7 @@ import { ella2Data } from "../data/ellaData";
 
 const { width, heigth } = Dimensions.get("window");
 
-const ella = ({ navigation }) => {
+const favItem = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Text style={styles.titleText}>Ella</Text>
@@ -44,7 +44,7 @@ const ella = ({ navigation }) => {
                     </View>
                     <TouchableOpacity>
                         <Button
-                            title="Add to Favorites"
+                            title="Remove from Favorites"
                             raised
                             color="fcc221"
                         />
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ella;
+export default favItem;

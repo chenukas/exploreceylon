@@ -74,7 +74,7 @@ export function DrawerContent(props) {
               )}
               label="Favorites"
               onPress={() => {
-                props.navigation.navigate("viewFavorites");
+                props.navigation.navigate("favorites");
               }}
             />
 
