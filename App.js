@@ -7,7 +7,7 @@ import { View, TouchableOpacity, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { SearchBar } from "react-native-elements";
+import { SearchBar, Button } from "react-native-elements";
 
 import NearCategory from "./src/screens/NearCategory";
 import { DrawerContent } from "./src/screens/DrawerContent";
@@ -23,7 +23,7 @@ import reserveHotel from "./src/screens/reserveHotel";
 import payHotel from "./src/screens/payHotel";
 import completedBooking from "./src/screens/completedBooking";
 import badulla from "./src/screens/badulla";
-import galle from "./src/screens/galle";
+import ella from "./src/screens/ella";
 import ampara from "./src/screens/ampara";
 import anuradhapura from "./src/screens/anuradhapura";
 import updateProfile from "./src/screens/updateProfile";
@@ -112,7 +112,7 @@ const App = () => {
             <Drawer.Screen name="viewFavorites" component={viewFavorites} />
             <Drawer.Screen name="searchCity" component={searchCity} />
             <Drawer.Screen name="badulla" component={badulla} />
-            <Drawer.Screen name="galle" component={galle} />
+            <Drawer.Screen name="ella" component={ella} />
             <Drawer.Screen name="ampara" component={ampara} />
             <Drawer.Screen name="anuradhapura" component={anuradhapura} />
             <Drawer.Screen name="updateProfile" component={updateProfile} />

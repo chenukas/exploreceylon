@@ -13,23 +13,72 @@ import {
 const badulla = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text style={styles.titleText}>Choose a Place</Text>
+            <Text style={styles.titleText}>Choose Place</Text>
             <ScrollView>
-                <TouchableOpacity style={styles.cards}>
-                    <Text>
-                        Diyaluma
-                    </Text>
+                <TouchableOpacity onPress={() => navigation.navigate("ella")}>
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: "row",
+                            borderRadius: 10,
+                            borderWidth: 2,
+                            borderColor: "#fcc221",
+                            width: "95%",
+                            alignSelf: "center",
+                        }}
+                    >
+                        <Image
+                            source={require("../../assets/images/ella2.jpg")}
+                            style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
+                        ></Image>
+                        <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
+                            <Text style={styles.hotelNames}>Ella</Text>
+                            <Text style={styles.prices}>Badulla</Text>
+                        </View>
+                    </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ella")} style={styles.cards}>
-                    <Text>
-                        Ella
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity  style={styles.cards}>
-                    <Text>
-                        Ravana
-                    </Text>
-                </TouchableOpacity>
+                <View style={{ height: 3 }}></View>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        borderRadius: 10,
+                        borderWidth: 2,
+                        borderColor: "#fcc221",
+                        width: "95%",
+                        alignSelf: "center",
+                    }}
+                >
+                    <Image
+                        source={require("../../assets/images/namunukula.jpeg")}
+                        style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
+                    ></Image>
+                    <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
+                        <Text style={styles.hotelNames}>Namunukula</Text>
+                        <Text style={styles.prices}>Badulla</Text>
+                    </View>
+                </View>
+                <View style={{ height: 3 }}></View>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        borderRadius: 10,
+                        borderWidth: 2,
+                        borderColor: "#fcc221",
+                        width: "95%",
+                        alignSelf: "center",
+                    }}
+                >
+                    <Image
+                        source={require("../../assets/images/rawana.jpg")}
+                        style={{ width: 100, height: 100, margin: 5, borderRadius: 50 }}
+                    ></Image>
+                    <View style={{ flex: 1, flexDirection: "column", height: 100 }}>
+                        <Text style={styles.hotelNames}>Ravana Falls</Text>
+                        <Text style={styles.prices}>Badulla</Text>
+                    </View>
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -59,6 +108,22 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginVertical: 2,
         marginHorizontal: 16,
+    },
+
+    hotelNames: {
+        padding: 5,
+        fontWeight: "bold",
+        fontSize: 22,
+        paddingTop: 20,
+    },
+    
+    prices: {
+        fontSize: 14,
+        padding: 5,
+        paddingTop: 15,
+        alignSelf: "flex-end",
+        paddingRight: 20,
+        fontWeight: "bold",
     },
 });
 
