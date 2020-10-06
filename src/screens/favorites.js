@@ -13,7 +13,7 @@ import {
 const favorites = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text style={styles.titleText}>Choose Place</Text>
+            <Text style={styles.titleText}>Your favorites</Text>
             <ScrollView>
                 <TouchableOpacity onPress={() => navigation.navigate("favItem")}>
                     <View
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingTop: 5,
         marginBottom: 20,
+        marginTop: 10,
     },
 
     cards: {
