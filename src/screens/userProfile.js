@@ -26,8 +26,8 @@ const userProfile = ({ navigation }) => {
         >
           <Image
             style={{
-              width: 150,
-              height: 150,
+              width: 135,
+              height: 135,
               borderRadius: 80,
               borderWidth: 2,
               borderColor: "#fcc221",
@@ -35,23 +35,22 @@ const userProfile = ({ navigation }) => {
             source={require("../../assets/images/user.jpg")}
           ></Image>
         </View>
-        <View style={{ position: "absolute" }}>
+        <View style={{ position: "absolute", width: "50%" }}>
           <Text
             style={{
               color: "#000",
-              fontSize: 30,
+              fontSize: 20,
               fontWeight: "bold",
-              marginTop: 20,
-              marginLeft: 23,
+              marginTop: 25,
+              alignSelf: "center",
             }}
           >
             Natalie Eleanor
           </Text>
           <Text
             style={{
-              fontSize: 18,
-              marginTop: 3,
-              marginLeft: 23,
+              fontSize: 15,
+              marginTop: 4,
               alignSelf: "center",
             }}
           >
@@ -59,11 +58,10 @@ const userProfile = ({ navigation }) => {
           </Text>
           <Text
             style={{
-              fontSize: 18,
-              marginTop: 3,
-              marginLeft: 23,
+              fontSize: 15,
+              marginTop: 4,
               alignSelf: "center",
-              marginBottom: 5,
+              marginBottom: 10,
             }}
           >
             23y/old
@@ -74,17 +72,16 @@ const userProfile = ({ navigation }) => {
             <View
               style={{
                 backgroundColor: "#fcc221",
-                height: 40,
-                borderRadius: 40,
-                width: "70%",
+                height: 35,
+                borderRadius: 50,
+                width: "60%",
                 alignSelf: "center",
-                marginLeft: 25,
               }}
             >
               <Text
                 style={{
                   alignSelf: "center",
-                  fontSize: 20,
+                  fontSize: 15,
                   color: "white",
                   padding: 5,
                 }}
@@ -108,8 +105,8 @@ const userProfile = ({ navigation }) => {
               style={{
                 alignSelf: "center",
                 marginTop: 5,
-                width: 130,
-                height: 130,
+                width: 115,
+                height: 115,
                 borderRadius: 80,
                 backgroundColor: "#fafbfc",
                 borderWidth: 2,
@@ -119,14 +116,14 @@ const userProfile = ({ navigation }) => {
               <Icon
                 name="image"
                 color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 20 }}
-                size={50}
+                style={{ alignSelf: "center", marginTop: 25 }}
+                size={35}
               />
               <View>
                 <Text
                   style={{
                     alignSelf: "center",
-                    fontSize: 24,
+                    fontSize: 18,
                     color: "#000",
                     fontWeight: "bold",
                   }}
@@ -142,8 +139,8 @@ const userProfile = ({ navigation }) => {
               style={{
                 alignSelf: "center",
                 marginTop: 20,
-                width: 130,
-                height: 130,
+                width: 115,
+                height: 115,
                 borderRadius: 80,
                 backgroundColor: "#fafbfc",
                 borderWidth: 2,
@@ -153,14 +150,14 @@ const userProfile = ({ navigation }) => {
               <Icon
                 name="map-pin"
                 color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 20 }}
-                size={50}
+                style={{ alignSelf: "center", marginTop: 25 }}
+                size={35}
               />
               <View>
                 <Text
                   style={{
                     alignSelf: "center",
-                    fontSize: 24,
+                    fontSize: 18,
                     color: "#000",
                     fontWeight: "bold",
                   }}
@@ -176,8 +173,8 @@ const userProfile = ({ navigation }) => {
               style={{
                 alignSelf: "center",
                 marginTop: 20,
-                width: 130,
-                height: 130,
+                width: 115,
+                height: 115,
                 borderRadius: 80,
                 backgroundColor: "#fafbfc",
                 borderWidth: 2,
@@ -188,14 +185,14 @@ const userProfile = ({ navigation }) => {
               <Icon
                 name="plus-circle"
                 color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 20 }}
-                size={50}
+                style={{ alignSelf: "center", marginTop: 25 }}
+                size={35}
               />
               <View>
                 <Text
                   style={{
                     alignSelf: "center",
-                    fontSize: 24,
+                    fontSize: 18,
                     color: "#000",
                     fontWeight: "bold",
                   }}
