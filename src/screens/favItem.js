@@ -7,49 +7,53 @@ import {
     StyleSheet,
     ScrollView,
     Image,
+    Alert,
     Dimensions,
 } from "react-native";
 import { Button } from 'react-native-elements';
 import Carousel from "../components/Carousel";
 import { ella2Data } from "../data/ellaData";
 
-const { width, heigth } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 const favItem = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Text style={styles.titleText}>Ella</Text>
             <View>
-                <Carousel data={ella2Data} />
+                <View style={{ height: height - 75 }}>
+                    <Carousel data={ella2Data} />
 
-                <ScrollView>
-                    <View
-                        style={{
-                            backgroundColor: "#fafbfc",
-                            borderRadius: 10,
-                            height: 325,
-                            marginTop: 5,
-                            marginLeft: 10,
-                            marginRight: 10,
-                        }}
-                    >
-                        <Text style={{ margin: 10 }}>
-                            Ella is a small town in the Badulla District of Uva Province,
-                             Sri Lanka governed by an Urban Council. It is approximately 
-                             200 kilometres east of Colombo and is situated at an elevation
-                              of 1,041 metres above sea level. The area has a rich bio-diversity,
-                               dense with numerous varieties of flora and fauna
+                    <ScrollView>
+                        <View
+                            style={{
+                                backgroundColor: "#fafbfc",
+                                borderRadius: 10,
+                                height: 325,
+                                marginTop: 5,
+                                marginLeft: 10,
+                                marginRight: 10,
+                            }}
+                        >
+                            <Text style={{ margin: 10 }}>
+                                Ella is a small town in the Badulla District of Uva Province,
+                                Sri Lanka governed by an Urban Council. It is approximately
+                                200 kilometres east of Colombo and is situated at an elevation
+                                of 1,041 metres above sea level. The area has a rich bio-diversity,
+                                dense with numerous varieties of flora and fauna
                         </Text>
 
+                        </View>
+                    </ScrollView>
                     </View>
                     <TouchableOpacity>
                         <Button
                             title="Remove from Favorites"
                             raised
                             color="fcc221"
+                            onPress={() => Alert.alert('Removed from Favorites')}
                         />
                     </TouchableOpacity>
-                </ScrollView>
             </View>
         </SafeAreaView>
     );
