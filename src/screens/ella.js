@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { Button } from 'react-native-elements';
 import Carousel from "../components/Carousel";
-import { dummyData } from "../data/ellaData";
+import { ella2Data } from "../data/ellaData";
 
 const { width, heigth } = Dimensions.get("window");
 
@@ -20,7 +20,7 @@ const ella = ({ navigation }) => {
         <SafeAreaView style={{ flex: 1 }}>
             <Text style={styles.titleText}>Ella</Text>
             <View>
-                <Carousel data={dummyData} />
+                <Carousel data={ella2Data} />
 
                 <ScrollView>
                     <View
@@ -34,13 +34,17 @@ const ella = ({ navigation }) => {
                         }}
                     >
                         <Text style={{ margin: 10 }}>
-                            Ella is a small town in the Badulla District of Uva Province, Sri Lanka governed by an Urban Council. It is approximately 200 kilometres east of Colombo and is situated at an elevation of 1,041 metres above sea level. The area has a rich bio-diversity, dense with numerous varieties of flora and fauna
+                            Ella is a small town in the Badulla District of Uva Province,
+                             Sri Lanka governed by an Urban Council. It is approximately 
+                             200 kilometres east of Colombo and is situated at an elevation
+                              of 1,041 metres above sea level. The area has a rich bio-diversity,
+                               dense with numerous varieties of flora and fauna
                         </Text>
 
                     </View>
                     <TouchableOpacity>
                         <Button
-                            title="Solid Button"
+                            title="Add to Favorites"
                             raised
                             color="fcc221"
                         />
