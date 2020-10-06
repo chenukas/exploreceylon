@@ -7,54 +7,62 @@ import {
     StyleSheet,
     ScrollView,
     Image,
+    Alert,
     Dimensions,
+    Button
 } from "react-native";
-import { Button } from 'react-native-elements';
 import Carousel from "../components/Carousel";
-import { ella2Data } from "../data/ellaData";
+import { dummyData } from "../data/ellaData";
 
-const { width, heigth } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 const ella = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Text style={styles.titleText}>Ella</Text>
-            <View>
-                <Carousel data={ella2Data} />
 
-                <ScrollView>
-                    <View
-                        style={{
-                            backgroundColor: "#fafbfc",
-                            borderRadius: 10,
-                            height: 325,
-                            marginTop: 5,
-                            marginLeft: 10,
-                            marginRight: 10,
-                        }}
-                    >
-                        <Text style={{ margin: 10 }}>
-                            Ella is a small town in the Badulla District of Uva Province,
-                             Sri Lanka governed by an Urban Council. It is approximately 
-                             200 kilometres east of Colombo and is situated at an elevation
-                              of 1,041 metres above sea level. The area has a rich bio-diversity,
-                               dense with numerous varieties of flora and fauna
+
+            <View style={{ height: height - 75 }}>
+                <Carousel data={dummyData} />
+                <View
+                    style={{
+                        backgroundColor: "#fafbfc",
+                        borderRadius: 15,
+                        padding: 20,
+                        margin: 10
+                    }}
+                >
+                    <Text style={{ margin: 20 }}>
+                        Ella is a small town in the Badulla District of Uva Province,
+                        Sri Lanka governed by an Urban Council. It is approximately
+                        200 kilometres east of Colombo and is situated at an elevation
+                        of 1,041 metres above sea level. The area has a rich bio-diversity,
+                        dense with numerous varieties of flora and fauna
                         </Text>
+                </View>
 
-                    </View>
-                    <TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={{
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        marginLeft: 10,
+                        marginRight: 10,
+                        marginTop: 20,
+                        borderRadius: 10
+                    }}>
                         <Button
                             title="Add to Favorites"
                             raised
-                            color="fcc221"
+                            color="#fcc221"
+                            onPress={() => Alert.alert('Added to your favorites!')}
                         />
-                    </TouchableOpacity>
-                </ScrollView>
+                    </View>
+                </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );
 };
-
 
 const styles = StyleSheet.create({
     container: {
@@ -81,6 +89,7 @@ const styles = StyleSheet.create({
         marginVertical: 2,
         marginHorizontal: 16,
     },
+
 });
 
 export default ella;
