@@ -24,8 +24,8 @@ import payHotel from "./src/screens/payHotel";
 import completedBooking from "./src/screens/completedBooking";
 import badulla from "./src/screens/badulla";
 import ella from "./src/screens/ella";
-import ampara from "./src/screens/ampara";
-import anuradhapura from "./src/screens/anuradhapura";
+import favorites from "./src/screens/favorites";
+import favItem from "./src/screens/favItem";
 import updateProfile from "./src/screens/updateProfile";
 
 import { AuthContext } from "./src/components/context";
@@ -113,8 +113,8 @@ const App = () => {
             <Drawer.Screen name="searchCity" component={searchCity} />
             <Drawer.Screen name="badulla" component={badulla} />
             <Drawer.Screen name="ella" component={ella} />
-            <Drawer.Screen name="ampara" component={ampara} />
-            <Drawer.Screen name="anuradhapura" component={anuradhapura} />
+            <Drawer.Screen name="favorites" component={favorites} />
+            <Drawer.Screen name="favItem" component={favItem} />
             <Drawer.Screen name="updateProfile" component={updateProfile} />
           </Drawer.Navigator>
         ) : (
