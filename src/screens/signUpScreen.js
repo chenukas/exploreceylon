@@ -15,7 +15,7 @@ import {
 import * as Animatable from "react-native-animatable";
 import LinearGradient from "react-native-linear-gradient";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Feather from "react-native-vector-icons/Feather";
+import FeatherIcons from "react-native-vector-icons/Feather";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
@@ -28,7 +28,7 @@ const SignUpScreen = ({ navigation }) => {
   const { register } = useContext(AuthContext);
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#b15b77" barStyle="dark-content" />
+      <StatusBar backgroundColor="#3a7072" barStyle="dark-content" />
       <View style={styles.header}>
         {/*<Text style={styles.text_header}>Register Now!</Text> */}
       </View>
@@ -36,7 +36,7 @@ const SignUpScreen = ({ navigation }) => {
         <ScrollView>
           <Text style={styles.text_footer}>Full Name</Text>
           <View style={styles.action}>
-            <FontAwesome name="user" color="#fff" size={18} />
+            <FeatherIcons name="user" color="#3a7072" size={20} />
             <TextInput
               placeholder="Enter your full name here..."
               returnKeyType="next"
@@ -49,7 +49,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Email</Text>
           <View style={styles.action}>
-            <FontAwesome name="envelope" color="#fff" size={15} />
+            <FeatherIcons name="mail" color="#3a7072" size={18} />
             <TextInput
               placeholder="Enter your e-mail here..."
               style={styles.textInput}
@@ -63,7 +63,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Mobile</Text>
           <View style={styles.action}>
-            <FontAwesome name="mobile" color="#fff" size={24} />
+            <FeatherIcons name="smartphone" color="#3a7072" size={18} />
             <TextInput
               placeholder="Enter your mobile number here..."
               keyboardType="phone-pad"
@@ -77,7 +77,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Password</Text>
           <View style={styles.action}>
-            <FontAwesome name="lock" color="#fff" size={22} />
+            <FeatherIcons name="lock" color="#3a7072" size={20} />
             <TextInput
               placeholder="Enter your password here..."
               secureTextEntry={true}
@@ -90,7 +90,7 @@ const SignUpScreen = ({ navigation }) => {
           </View>
           <View style={styles.textPrivate}>
             <Text style={styles.color_textPrivate}>
-              By clicking Sign Up, you agree to travelsome's
+              By clicking Sign Up, you agree to Explore Ceylon's
             </Text>
             <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
               Terms of service,
@@ -113,7 +113,7 @@ const SignUpScreen = ({ navigation }) => {
               }
             >
               <LinearGradient
-                colors={["#b15b77", "#a2597b"]}
+                colors={["#5f9ea0", "#3a7072"]}
                 style={styles.signIn}
               >
                 <Text style={[styles.textSign, { color: "#fff" }]}>
@@ -133,7 +133,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#b15b77",
+    backgroundColor: "#3a7072",
   },
   header: {
     flex: 1,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 20,
-    backgroundColor: "#534d90",
+    backgroundColor: "#f9f1f1",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 20,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   text_footer: {
-    color: "#fff",
+    color: "#3a7072",
     fontSize: 18,
   },
   action: {
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: Platform.OS === "ios" ? 0 : -12,
     paddingLeft: 10,
-    color: "#f2f2f2",
+    color: "#000",
   },
   errorMsg: {
     color: "#FF0000",
