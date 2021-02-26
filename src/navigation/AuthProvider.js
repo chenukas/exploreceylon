@@ -24,16 +24,29 @@ export const AuthProvider = ({ children }) => {
             console.log(e);
           }
         },
-        register: async (email, password, displayName, phoneNumber) => {
+        register: async (
+          email,
+          password,
+          fullName,
+          displayName,
+          phoneNumber
+        ) => {
           try {
             await auth()
               .createUserWithEmailAndPassword(email, password)
+              .then((res) => {
+                res.user.updateProfile({
+                  displayName: displayName,
+                });
+                console.log("User registered successfully!");
+              })
               .then(() => {
                 firestore()
                   .collection("users")
                   .doc(auth().currentUser.uid)
                   .set({
                     //user variables
+                    fullName: fullName,
                     displayName: displayName,
                     email: email,
                     phoneNumber: phoneNumber,

@@ -22,6 +22,7 @@ import { AuthContext } from "../navigation/AuthProvider";
 const SignUpScreen = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [fullName, setFullName] = useState();
   const [displayName, setDisplayName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
 
@@ -39,6 +40,21 @@ const SignUpScreen = ({ navigation }) => {
             <FeatherIcons name="user" color="#3a7072" size={20} />
             <TextInput
               placeholder="Enter your full name here..."
+              returnKeyType="next"
+              style={styles.textInput}
+              autoCapitalize="words"
+              value={fullName}
+              onChangeText={(fullName) => setFullName(fullName)}
+            />
+          </View>
+
+          <Text style={[styles.text_footer, { marginTop: 25 }]}>
+            Display Name
+          </Text>
+          <View style={styles.action}>
+            <FeatherIcons name="tag" color="#3a7072" size={20} />
+            <TextInput
+              placeholder="Enter your display name here..."
               returnKeyType="next"
               style={styles.textInput}
               autoCapitalize="words"
@@ -109,7 +125,7 @@ const SignUpScreen = ({ navigation }) => {
             <TouchableOpacity
               style={styles.signIn}
               onPress={() =>
-                register(email, password, displayName, phoneNumber)
+                register(email, password, fullName, displayName, phoneNumber)
               }
             >
               <LinearGradient
