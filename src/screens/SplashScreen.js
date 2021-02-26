@@ -15,7 +15,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#fff" barStyle="light-content" />
+      <StatusBar backgroundColor="#3a7072" barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
@@ -31,7 +31,7 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
             <LinearGradient
-              colors={["#b15b77", "#a2597b"]}
+              colors={["#5f9ea0", "#3a7072"]}
               style={styles.signIn}
             >
               <Text style={styles.textSign}>Get started</Text>
@@ -52,7 +52,7 @@ const height_logo = height * 0.28;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#3a7072",
   },
   header: {
     flex: 2,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: "#534d90",
+    backgroundColor: "#f9f1f1",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingVertical: 50,
@@ -72,12 +72,12 @@ const styles = StyleSheet.create({
     height: height_logo,
   },
   title: {
-    color: "#fff",
+    color: "#000000",
     fontSize: 30,
     fontWeight: "bold",
   },
   text: {
-    color: "#f5f5f5",
+    color: "#8d8d8d",
     marginTop: 5,
   },
   button: {

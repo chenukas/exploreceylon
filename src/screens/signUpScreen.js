@@ -1,171 +1,209 @@
-import * as React from "react";
+import React, { useContext, useState } from "react";
 import {
-  TouchableOpacity,
   View,
   Text,
-  SafeAreaView,
+  Button,
   StyleSheet,
-  ScrollView,
+  StatusBar,
+  Dimensions,
   Image,
+  TouchableOpacity,
+  Platform,
   TextInput,
+  ScrollView,
 } from "react-native";
+import * as Animatable from "react-native-animatable";
+import LinearGradient from "react-native-linear-gradient";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
 
-import Icon from "react-native-vector-icons/Feather";
+import { AuthContext } from "../navigation/AuthProvider";
 
 const SignUpScreen = ({ navigation }) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [displayName, setDisplayName] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+
+  const { register } = useContext(AuthContext);
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ padding: 10 }}>
-        <TouchableOpacity style={{ alignSelf: "center" }}>
-          <View
-            style={{
-              alignSelf: "center",
-              marginTop: 25,
-              width: 100,
-              height: 100,
-              borderRadius: 80,
-              backgroundColor: "#fafbfc",
-              borderWidth: 2,
-              borderColor: "#fcc221",
-            }}
-          >
-            <Icon
-              name="image"
-              color={"#fcc221"}
-              style={{ alignSelf: "center", marginTop: 27.5 }}
-              size={40}
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#b15b77" barStyle="dark-content" />
+      <View style={styles.header}>
+        {/*<Text style={styles.text_header}>Register Now!</Text> */}
+      </View>
+      <Animatable.View animation="fadeInUpBig" style={styles.footer}>
+        <ScrollView>
+          <Text style={styles.text_footer}>Full Name</Text>
+          <View style={styles.action}>
+            <FontAwesome name="user" color="#fff" size={18} />
+            <TextInput
+              placeholder="Enter your full name here..."
+              returnKeyType="next"
+              style={styles.textInput}
+              autoCapitalize="words"
+              value={displayName}
+              onChangeText={(displayName) => setDisplayName(displayName)}
             />
           </View>
-        </TouchableOpacity>
 
-        <View>
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginTop: 25,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 51,
-              paddingLeft: 10,
-            }}
-            placeholder="Full Name"
-            returnKeyType="next"
-          ></TextInput>
+          <Text style={[styles.text_footer, { marginTop: 25 }]}>Email</Text>
+          <View style={styles.action}>
+            <FontAwesome name="envelope" color="#fff" size={15} />
+            <TextInput
+              placeholder="Enter your e-mail here..."
+              style={styles.textInput}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              returnKeyType="next"
+              value={email}
+              onChangeText={(userEmail) => setEmail(userEmail)}
+            />
+          </View>
 
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 50,
-              paddingLeft: 10,
-            }}
-            placeholder="Birthday(MM-DD-YYYY)"
-            returnKeyType="next"
-            maxLength={10}
-          ></TextInput>
+          <Text style={[styles.text_footer, { marginTop: 25 }]}>Mobile</Text>
+          <View style={styles.action}>
+            <FontAwesome name="mobile" color="#fff" size={24} />
+            <TextInput
+              placeholder="Enter your mobile number here..."
+              keyboardType="phone-pad"
+              maxLength={10}
+              returnKeyType="next"
+              style={styles.textInput}
+              value={phoneNumber}
+              onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
+            />
+          </View>
 
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 50,
-              paddingLeft: 10,
-            }}
-            placeholder="E-mail"
-            returnKeyType="next"
-          ></TextInput>
-
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 50,
-              paddingLeft: 10,
-            }}
-            placeholder="Mobile"
-            returnKeyType="next"
-            maxLength={10}
-          ></TextInput>
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 50,
-              paddingLeft: 10,
-            }}
-            placeholder="Password"
-            returnKeyType="next"
-            secureTextEntry={true}
-          ></TextInput>
-          <TextInput
-            style={{
-              borderRadius: 10,
-              marginBottom: 10,
-              borderColor: "#fcc221",
-              backgroundColor: "#fafbfc",
-              fontSize: 16,
-              width: "100%",
-              alignSelf: "center",
-              height: 50,
-              paddingLeft: 10,
-            }}
-            placeholder="Confirm Password"
-            returnKeyType="done"
-            secureTextEntry={true}
-          ></TextInput>
-        </View>
-
-        <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
-          <View
-            style={{
-              backgroundColor: "#fcc221",
-              borderColor: "#fcc221",
-              height: 50,
-              width: "100%",
-              alignSelf: "center",
-              borderRadius: 10,
-              marginTop: 20,
-            }}
-          >
-            <Text
-              style={{
-                alignSelf: "center",
-                margin: 11,
-                fontSize: 20,
-                color: "white",
-              }}
-            >
-              Sign-up
+          <Text style={[styles.text_footer, { marginTop: 25 }]}>Password</Text>
+          <View style={styles.action}>
+            <FontAwesome name="lock" color="#fff" size={22} />
+            <TextInput
+              placeholder="Enter your password here..."
+              secureTextEntry={true}
+              style={styles.textInput}
+              autoCapitalize="none"
+              returnKeyType="done"
+              value={password}
+              onChangeText={(userPassword) => setPassword(userPassword)}
+            />
+          </View>
+          <View style={styles.textPrivate}>
+            <Text style={styles.color_textPrivate}>
+              By clicking Sign Up, you agree to travelsome's
+            </Text>
+            <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
+              Terms of service,
+            </Text>
+            <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
+              {" "}
+              Privacy Policy
+            </Text>
+            <Text style={styles.color_textPrivate}> and</Text>
+            <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
+              {" "}
+              Cookie Policy.
             </Text>
           </View>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+          <View style={styles.button}>
+            <TouchableOpacity
+              style={styles.signIn}
+              onPress={() =>
+                register(email, password, displayName, phoneNumber)
+              }
+            >
+              <LinearGradient
+                colors={["#b15b77", "#a2597b"]}
+                style={styles.signIn}
+              >
+                <Text style={[styles.textSign, { color: "#fff" }]}>
+                  Sign Up
+                </Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </Animatable.View>
+    </View>
   );
 };
 
-export default signUpScreen;
+export default SignUpScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#b15b77",
+  },
+  header: {
+    flex: 1,
+    justifyContent: "flex-end",
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  footer: {
+    flex: 20,
+    backgroundColor: "#534d90",
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    paddingHorizontal: 20,
+    paddingVertical: 30,
+  },
+  text_header: {
+    color: "#b15b77",
+    fontWeight: "bold",
+    fontSize: 30,
+  },
+  text_footer: {
+    color: "#fff",
+    fontSize: 18,
+  },
+  action: {
+    flexDirection: "row",
+    marginTop: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#f2f2f2",
+    paddingBottom: 5,
+  },
+  actionError: {
+    flexDirection: "row",
+    marginTop: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#FF0000",
+    paddingBottom: 5,
+  },
+  textInput: {
+    flex: 1,
+    marginTop: Platform.OS === "ios" ? 0 : -12,
+    paddingLeft: 10,
+    color: "#f2f2f2",
+  },
+  errorMsg: {
+    color: "#FF0000",
+    fontSize: 14,
+  },
+  button: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  signIn: {
+    width: "100%",
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  textSign: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  textPrivate: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 20,
+  },
+  color_textPrivate: {
+    color: "grey",
+  },
+});
