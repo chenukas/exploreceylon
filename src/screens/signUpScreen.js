@@ -12,7 +12,7 @@ import {
 
 import Icon from "react-native-vector-icons/Feather";
 
-const signUpScreen = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ padding: 10 }}>

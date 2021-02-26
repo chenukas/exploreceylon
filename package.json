@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-native-community/checkbox": "^0.5.3",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-firebase/app": "^10.8.1",

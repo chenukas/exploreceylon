@@ -12,7 +12,7 @@ import {
 
 import { AuthContext } from "../components/context";
 
-const signInScreen = ({ navigation }) => {
+const SignInScreen = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);
 
   return (
