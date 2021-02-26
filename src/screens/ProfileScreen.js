@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import {
   TouchableOpacity,
   View,
@@ -11,7 +11,11 @@ import {
 
 import Icon from "react-native-vector-icons/Feather";
 
+import { AuthContext } from "../navigation/AuthProvider";
+
 const ProfileScreen = ({ navigation }) => {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
@@ -66,9 +70,7 @@ const ProfileScreen = ({ navigation }) => {
           >
             23y/old
           </Text>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("updateProfile")}
-          >
+          <TouchableOpacity onPress={() => logout()}>
             <View
               style={{
                 backgroundColor: "#fcc221",
