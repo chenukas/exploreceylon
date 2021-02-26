@@ -15,12 +15,16 @@ export const AuthProvider = ({ children }) => {
         setUser,
         login: async (email, password) => {
           try {
-            await auth().signInWithEmailAndPassword(email, password);
+            await auth()
+              .signInWithEmailAndPassword(email, password)
+              .then(() => {
+                console.log("User logged-in successfully!");
+              });
           } catch (e) {
             console.log(e);
           }
         },
-        register: async (email, password) => {
+        register: async (email, password, displayName, phoneNumber) => {
           try {
             await auth()
               .createUserWithEmailAndPassword(email, password)
@@ -30,7 +34,9 @@ export const AuthProvider = ({ children }) => {
                   .doc(auth().currentUser.uid)
                   .set({
                     //user variables
+                    displayName: displayName,
                     email: email,
+                    phoneNumber: phoneNumber,
                     createdAt: firestore.Timestamp.fromDate(new Date()),
                   })
                   .catch((error) => {
