@@ -23,14 +23,7 @@ const HomeScreen = ({ navigation }) => {
             style={{ width: "100%", height: 120 }}
             imageStyle={{ borderBottomRightRadius: 65 }}
           >
-            <View style={styles.DarkOverlay}>
-              <View>
-                <Image
-                  source={require("../../assets/images/logo.png")}
-                  style={styles.logo}
-                />
-              </View>
-            </View>
+            <View style={styles.DarkOverlay}></View>
           </ImageBackground>
           <View>
             <Text

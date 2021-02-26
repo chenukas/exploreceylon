@@ -11,7 +11,7 @@ import {
 
 import Icon from "react-native-vector-icons/Feather";
 
-const userProfile = ({ navigation }) => {
+const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
@@ -208,4 +208,4 @@ const userProfile = ({ navigation }) => {
   );
 };
 
-export default userProfile;
+export default ProfileScreen;
