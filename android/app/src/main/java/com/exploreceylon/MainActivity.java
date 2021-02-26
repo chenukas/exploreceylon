@@ -1,4 +1,4 @@
-package com.nav;
+package com.exploreceylon;
 
 import android.os.Bundle;
 

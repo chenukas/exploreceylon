@@ -1,4 +1,4 @@
-package com.nav.generated;
+package com.exploreceylon.generated;
 
 import java.util.Arrays;
 import java.util.List;

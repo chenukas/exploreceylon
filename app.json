@@ -1,9 +1,9 @@
 {
-  "name": "tourinsrilanka",
-  "displayName": "tourinsrilanka",
+  "name": "exploreceylon",
+  "displayName": "exploreceylon",
   "expo": {
-    "name": "tourinsrilanka",
-    "slug": "tourinsrilanka",
+    "name": "exploreceylon",
+    "slug": "exploreceylon",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
