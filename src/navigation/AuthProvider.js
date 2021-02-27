@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
                 res.user.updateProfile({
                   displayName: displayName,
                 });
-                console.log("User registered successfully!");
+                console.log("User has registered successfully");
               })
               .then(() => {
                 firestore()
