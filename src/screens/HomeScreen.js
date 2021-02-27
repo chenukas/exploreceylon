@@ -17,11 +17,11 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
-import VerticalCarousel from "../components/VerticalCarousel";
+import { SliderBox } from "react-native-image-slider-box";
 import { dummyData } from "../data/Data";
 
 const HomeScreen = ({ navigation }) => {
-  const { user, logout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <Animatable.View animation="fadeInDown" style={styles.container}>
@@ -35,7 +35,45 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <View style={styles.footer}>
         <ScrollView>
-          <VerticalCarousel data={dummyData} />
+          <SliderBox
+            images={dummyData.images}
+            sliderBoxHeight={200}
+            onCurrentImagePressed={(index) =>
+              console.warn(`image ${index} pressed`)
+            }
+            dotColor="#2b569a"
+            inactiveDotColor="#f5f5f5"
+            paginationBoxVerticalPadding={20}
+            autoplay
+            circleLoop
+            resizeMethod={"resize"}
+            resizeMode={"cover"}
+            paginationBoxStyle={{
+              position: "absolute",
+              bottom: 0,
+              padding: 0,
+              alignItems: "center",
+              alignSelf: "center",
+              justifyContent: "center",
+              paddingVertical: 10,
+            }}
+            dotStyle={{
+              width: 10,
+              height: 10,
+              borderRadius: 5,
+              marginHorizontal: 0,
+              padding: 0,
+              margin: 0,
+              backgroundColor: "rgba(128, 128, 128, 0.92)",
+            }}
+            ImageComponentStyle={{
+              borderRadius: 15,
+              width: "95%",
+              marginTop: 5,
+            }}
+            imageLoadingColor="#88a9dd"
+          />
+
           <View style={styles.imageContainer}>
             <View style={styles.imageView}>
               <Image
