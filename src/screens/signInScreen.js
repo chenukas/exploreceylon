@@ -25,14 +25,14 @@ const SignInScreen = ({ navigation }) => {
   const { login } = useContext(AuthContext);
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#3a7072" barStyle="dark-content" />
+      <StatusBar backgroundColor="#2b569a" barStyle="dark-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <Text style={styles.text_footer}>Email</Text>
         <View style={styles.action}>
-          <FeatherIcons name="user" color="#3a7072" size={20} />
+          <FeatherIcons name="user" color="#2b569a" size={20} />
           <TextInput
             placeholder="Enter your e-mail here..."
             style={styles.textInput}
@@ -45,7 +45,7 @@ const SignInScreen = ({ navigation }) => {
         </View>
         <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
         <View style={styles.action}>
-          <FeatherIcons name="lock" color="#3a7072" size={20} />
+          <FeatherIcons name="lock" color="#2b569a" size={20} />
           <TextInput
             placeholder="Enter your password here..."
             secureTextEntry={true}
@@ -61,20 +61,22 @@ const SignInScreen = ({ navigation }) => {
             onPress={() => login(email, password)}
           >
             <LinearGradient
-              colors={["#5f9ea0", "#3a7072"]}
+              colors={["#3e639e", "#2b569a"]}
               style={styles.signIn}
             >
-              <Text style={[styles.textSign, { color: "#fff" }]}>Sign In</Text>
+              <Text style={[styles.textSign, { color: "#fafbfc" }]}>
+                Sign In
+              </Text>
             </LinearGradient>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("Signup")}
             style={[
               styles.signIn,
-              { borderColor: "#3a7072", borderWidth: 1, marginTop: 15 },
+              { borderColor: "#2b569a", borderWidth: 1, marginTop: 15 },
             ]}
           >
-            <Text style={[styles.textSign, { color: "#3a7072" }]}>Sign Up</Text>
+            <Text style={[styles.textSign, { color: "#2b569a" }]}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
@@ -87,7 +89,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3a7072",
+    backgroundColor: "#2b569a",
   },
   header: {
     flex: 1,
@@ -97,19 +99,19 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 3,
-    backgroundColor: "#f9f1f1",
+    backgroundColor: "#fafbfc",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 20,
     paddingVertical: 30,
   },
   text_header: {
-    color: "#fff",
+    color: "#fafbfc",
     fontWeight: "bold",
     fontSize: 30,
   },
   text_footer: {
-    color: "#3a7072",
+    color: "#2b569a",
     fontSize: 18,
   },
   action: {

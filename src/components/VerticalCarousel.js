@@ -78,7 +78,7 @@ const VerticalCarousel = ({ data }) => {
                   opacity,
                   height: 10,
                   width: 10,
-                  backgroundColor: "#3a7072",
+                  backgroundColor: "#2b569a",
                   margin: 8,
                   borderRadius: 5,
                 }}
