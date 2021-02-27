@@ -36,7 +36,7 @@ const ProfileScreen = ({ navigation }) => {
               borderWidth: 2,
               borderColor: "#fcc221",
             }}
-            source={require("../../assets/images/user.jpg")}
+            source={{ uri: "https://i.pravatar.cc/300" }}
           ></Image>
         </View>
         <View style={{ position: "absolute", width: "50%" }}>

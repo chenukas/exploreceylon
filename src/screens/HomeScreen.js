@@ -47,13 +47,10 @@ const HomeScreen = ({ navigation }) => {
         </Animatable.Text>
       </View>
       <View style={styles.footer}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <SliderBox
             images={dummyData.images}
             sliderBoxHeight={200}
-            onCurrentImagePressed={(index) =>
-              console.warn(`image ${index} pressed`)
-            }
             dotColor="#2b569a"
             inactiveDotColor="#f5f5f5"
             paginationBoxVerticalPadding={20}
@@ -88,138 +85,44 @@ const HomeScreen = ({ navigation }) => {
           />
 
           <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/yala.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
+            <View style={[styles.imageView, { backgroundColor: "#57aaff" }]}>
               <Icon
-                name="location-on"
-                size={16}
+                name="hotel"
+                size={40}
                 color="white"
-                style={styles.imageLocationIcon}
+                style={styles.menuIcon}
               />
-              <Text style={styles.ImageText}>Yala</Text>
+              <Text style={styles.menuText}>Hotels</Text>
             </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/mirissa.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
+            <View style={[styles.imageView, { backgroundColor: "#660724" }]}>
               <Icon
-                name="location-on"
-                size={16}
+                name="directions-car"
+                size={40}
                 color="white"
-                style={styles.imageLocationIcon}
+                style={styles.menuIcon}
               />
-              <Text style={styles.ImageText}>Mirissa</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/ella.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Ella</Text>
+              <Text style={styles.menuText}>Taxi</Text>
             </View>
           </View>
 
           <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/unawatuna.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
+            <View style={[styles.imageView, { backgroundColor: "#eba123" }]}>
               <Icon
-                name="location-on"
-                size={16}
+                name="timeline"
+                size={40}
                 color="white"
-                style={styles.imageLocationIcon}
+                style={styles.menuIcon}
               />
-              <Text style={styles.ImageText}>Unawatuna</Text>
+              <Text style={styles.menuText}>Trip Planner</Text>
             </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/diyaluma.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
+            <View style={[styles.imageView, { backgroundColor: "#217338" }]}>
               <Icon
-                name="location-on"
-                size={16}
+                name="library-books"
+                size={40}
                 color="white"
-                style={styles.imageLocationIcon}
+                style={styles.menuIcon}
               />
-              <Text style={styles.ImageText}>Haputale</Text>
-            </View>
-
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/galle.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Galle</Text>
-            </View>
-          </View>
-
-          <View style={styles.imageContainer}>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/hikkaduwa.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Hikkaduwa</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/dalawella.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Dalawella</Text>
-            </View>
-            <View style={styles.imageView}>
-              <Image
-                source={require("../../assets/images/sigiriya.jpg")}
-                style={styles.image}
-              />
-              <View style={styles.ImageOverlay}></View>
-              <Icon
-                name="location-on"
-                size={16}
-                color="white"
-                style={styles.imageLocationIcon}
-              />
-              <Text style={styles.ImageText}>Sigiriya</Text>
+              <Text style={styles.menuText}>Blog</Text>
             </View>
           </View>
         </ScrollView>
@@ -259,39 +162,14 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     paddingTop: 10,
   },
-  logo: {
-    width: 100,
-    height: 100,
-    alignSelf: "center",
-    position: "absolute",
+  menuIcon: {
+    bottom: 2,
   },
-  ImageOverlay: {
-    width: 110,
-    height: 250,
-    marginRight: 8,
-    borderRadius: 10,
-    position: "absolute",
-    backgroundColor: "#000",
-    opacity: 0.2,
-  },
-  userText: {
-    fontSize: 16,
-    fontWeight: "normal",
+  menuText: {
     color: "white",
-  },
-  imageLocationIcon: {
-    position: "absolute",
-    marginTop: 4,
-    left: 10,
-    bottom: 10,
-  },
-  ImageText: {
-    position: "absolute",
-    color: "white",
-    marginTop: 4,
     fontSize: 14,
-    left: 30,
-    bottom: 10,
+    alignSelf: "center",
+    fontFamily: "Kanit-Medium",
   },
   imageContainer: {
     flexDirection: "row",
@@ -299,10 +177,12 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   imageView: {
-    width: 110,
-    height: 250,
-
-    marginHorizontal: 3,
+    width: width / 2 - 15,
+    height: height / 6,
+    marginHorizontal: 5,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
   image: {
     width: "100%",
