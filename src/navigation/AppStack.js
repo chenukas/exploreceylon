@@ -28,9 +28,15 @@ const HomeStack = ({ navigation }) => (
       headerStyle: {
         backgroundColor: "#2b569a",
       },
+      headerTitleAlign: "center",
+      headerTitleStyle: {
+        fontFamily: "Kanit-SemiBold",
+        fontSize: 25,
+        paddingBottom: 5,
+      },
     }}
   >
-    <Stack.Screen name="Initial" component={HomeScreen} />
+    <Stack.Screen name="Explore Ceylon" component={HomeScreen} />
   </Stack.Navigator>
 );
 

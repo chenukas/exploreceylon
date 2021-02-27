@@ -103,11 +103,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginTop: 10,
-    fontWeight: "bold",
+    fontFamily: "Kanit-Regular",
+    color: "#2b569a",
   },
   caption: {
     fontSize: 14,
     lineHeight: 14,
+    fontFamily: "Kanit-Thin",
   },
   row: {
     marginTop: 20,
