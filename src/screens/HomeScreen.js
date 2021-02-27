@@ -239,18 +239,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
-    paddingTop: 30,
+    paddingTop: 40,
     paddingBottom: 10,
   },
   text_header: {
     color: "#fafbfc",
-    fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 25,
+    fontFamily: "Kanit-Thin",
   },
   text_header_name: {
     color: "#fafbfc",
-    fontWeight: "bold",
     fontSize: 25,
+    fontFamily: "Kanit-Medium",
   },
   footer: {
     flex: 10,
