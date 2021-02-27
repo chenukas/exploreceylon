@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { View, StyleSheet } from "react-native";
-import { Avatar, Title, Caption, Paragraph, Drawer } from "react-native-paper";
+import { Avatar, Title, Caption, Drawer } from "react-native-paper";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
@@ -18,7 +18,7 @@ export function CustomDrawerContent(props) {
             <View style={{ flexDirection: "row", marginTop: 15 }}>
               {user != null ? (
                 <Avatar.Image
-                  source={require("../../assets/images/user.jpg")}
+                  source={{ uri: "https://i.pravatar.cc/300" }}
                   size={75}
                 />
               ) : null}
@@ -28,11 +28,14 @@ export function CustomDrawerContent(props) {
               </View>
             </View>
           </View>
-
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="home-outline" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="home-outline"
+                  color={color}
+                  size={size}
+                />
               )}
               label="Home"
               onPress={() => {
@@ -41,7 +44,11 @@ export function CustomDrawerContent(props) {
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="account-outline" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="account-outline"
+                  color={color}
+                  size={size}
+                />
               )}
               label="Profile"
               onPress={() => {
@@ -50,16 +57,24 @@ export function CustomDrawerContent(props) {
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="bookmark-outline" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="bookmark-outline"
+                  color={color}
+                  size={size}
+                />
               )}
-              label="Bookmarks"
+              label="Bookings"
               onPress={() => {
-                props.navigation.navigate("BookmarkScreen");
+                props.navigation.navigate("BookingsScreen");
               }}
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="settings-outline" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="settings-outline"
+                  color={color}
+                  size={size}
+                />
               )}
               label="Settings"
               onPress={() => {
@@ -68,7 +83,11 @@ export function CustomDrawerContent(props) {
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="account-check-outline" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="account-check-outline"
+                  color={color}
+                  size={size}
+                />
               )}
               label="Support"
               onPress={() => {
@@ -81,7 +100,11 @@ export function CustomDrawerContent(props) {
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
           icon={({ color, size }) => (
-            <Icon name="exit-to-app" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="exit-to-app"
+              color={color}
+              size={size}
+            />
           )}
           label="Sign Out"
           onPress={() => {
@@ -120,10 +143,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginRight: 15,
-  },
-  paragraph: {
-    fontWeight: "bold",
-    marginRight: 3,
   },
   drawerSection: {
     marginTop: 15,
