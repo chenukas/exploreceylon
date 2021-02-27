@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -22,16 +22,29 @@ import { dummyData } from "../data/Data";
 
 const HomeScreen = ({ navigation }) => {
   const { user } = useContext(AuthContext);
+  const [currentHour, setCurrentHour] = useState();
+
+  useEffect(() => {
+    let hour = new Date().getHours();
+    setCurrentHour(hour);
+  });
 
   return (
-    <Animatable.View animation="fadeInDown" style={styles.container}>
+    <View style={styles.container}>
       <StatusBar backgroundColor="#2b569a" barStyle="dark-content" />
       <View style={styles.header}>
-        {user ? (
+        {currentHour < 12 ? (
           <Animatable.Text animation="fadeInDown" style={styles.text_header}>
-            Hello! {user.displayName}
+            Good Morning,
           </Animatable.Text>
-        ) : null}
+        ) : (
+          <Animatable.Text animation="fadeInDown" style={styles.text_header}>
+            Good Evening,
+          </Animatable.Text>
+        )}
+        <Animatable.Text animation="fadeInDown" style={styles.text_header_name}>
+          {user.displayName}
+        </Animatable.Text>
       </View>
       <View style={styles.footer}>
         <ScrollView>
@@ -211,7 +224,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </ScrollView>
       </View>
-    </Animatable.View>
+    </View>
   );
 };
 
@@ -226,13 +239,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
-    paddingTop: 5,
-    paddingBottom: 22,
+    paddingTop: 30,
+    paddingBottom: 10,
   },
   text_header: {
     color: "#fafbfc",
     fontWeight: "bold",
-    fontSize: 30,
+    fontSize: 20,
+  },
+  text_header_name: {
+    color: "#fafbfc",
+    fontWeight: "bold",
+    fontSize: 25,
   },
   footer: {
     flex: 10,

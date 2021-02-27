@@ -3,8 +3,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import auth from "@react-native-firebase/auth";
 import { AuthContext } from "./AuthProvider";
 
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { CustomDrawerContent } from "../screens/CustomDrawerContent";
+
 import AuthStack from "./AuthStack";
 import AppStack from "./AppStack";
+import ProfileScreen from "../screens/ProfileScreen";
+
+const Drawer = createDrawerNavigator();
 
 const Routes = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -24,7 +30,16 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+      {user ? (
+        <Drawer.Navigator
+          drawerContent={(props) => <CustomDrawerContent {...props} />}
+        >
+          <Drawer.Screen name="HomeDrawer" component={AppStack} />
+          <Drawer.Screen name="Profile" component={ProfileScreen} />
+        </Drawer.Navigator>
+      ) : (
+        <AuthStack />
+      )}
     </NavigationContainer>
   );
 };

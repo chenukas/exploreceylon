@@ -15,7 +15,19 @@ const Tab = createBottomTabNavigator();
 const HomeStack = ({ navigation }) => (
   <Stack.Navigator
     screenOptions={{
-      headerShown: false,
+      headerLeft: () => (
+        <MaterialCommunityIcons.Button
+          name="menu"
+          size={25}
+          style={{ paddingLeft: 15 }}
+          backgroundColor="#2b569a"
+          onPress={() => navigation.openDrawer()}
+        ></MaterialCommunityIcons.Button>
+      ),
+      headerTintColor: "#fff",
+      headerStyle: {
+        backgroundColor: "#2b569a",
+      },
     }}
   >
     <Stack.Screen name="Initial" component={HomeScreen} />
@@ -74,22 +86,11 @@ const AppStack = () => {
 
       <Tab.Screen
         name="Favorites"
-        component={FavoritesScreen}
+        component={FavoritesStack}
         options={{
           // tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="heart" color={color} size={size} />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          // tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
         }}
       />
