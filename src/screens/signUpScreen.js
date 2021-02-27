@@ -29,7 +29,7 @@ const SignUpScreen = ({ navigation }) => {
   const { register } = useContext(AuthContext);
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#3a7072" barStyle="dark-content" />
+      <StatusBar backgroundColor="#2b569a" barStyle="dark-content" />
       <View style={styles.header}>
         {/*<Text style={styles.text_header}>Register Now!</Text> */}
       </View>
@@ -37,7 +37,7 @@ const SignUpScreen = ({ navigation }) => {
         <ScrollView>
           <Text style={styles.text_footer}>Full Name</Text>
           <View style={styles.action}>
-            <FeatherIcons name="user" color="#3a7072" size={20} />
+            <FeatherIcons name="user" color="#2b569a" size={20} />
             <TextInput
               placeholder="Enter your full name here..."
               returnKeyType="next"
@@ -52,7 +52,7 @@ const SignUpScreen = ({ navigation }) => {
             Display Name
           </Text>
           <View style={styles.action}>
-            <FeatherIcons name="tag" color="#3a7072" size={20} />
+            <FeatherIcons name="tag" color="#2b569a" size={20} />
             <TextInput
               placeholder="Enter your display name here..."
               returnKeyType="next"
@@ -65,7 +65,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Email</Text>
           <View style={styles.action}>
-            <FeatherIcons name="mail" color="#3a7072" size={18} />
+            <FeatherIcons name="mail" color="#2b569a" size={18} />
             <TextInput
               placeholder="Enter your e-mail here..."
               style={styles.textInput}
@@ -79,7 +79,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Mobile</Text>
           <View style={styles.action}>
-            <FeatherIcons name="smartphone" color="#3a7072" size={18} />
+            <FeatherIcons name="smartphone" color="#2b569a" size={18} />
             <TextInput
               placeholder="Enter your mobile number here..."
               keyboardType="phone-pad"
@@ -93,7 +93,7 @@ const SignUpScreen = ({ navigation }) => {
 
           <Text style={[styles.text_footer, { marginTop: 25 }]}>Password</Text>
           <View style={styles.action}>
-            <FeatherIcons name="lock" color="#3a7072" size={20} />
+            <FeatherIcons name="lock" color="#2b569a" size={20} />
             <TextInput
               placeholder="Enter your password here..."
               secureTextEntry={true}
@@ -129,10 +129,10 @@ const SignUpScreen = ({ navigation }) => {
               }
             >
               <LinearGradient
-                colors={["#5f9ea0", "#3a7072"]}
+                colors={["#3e639e", "#2b569a"]}
                 style={styles.signIn}
               >
-                <Text style={[styles.textSign, { color: "#fff" }]}>
+                <Text style={[styles.textSign, { color: "#fafbfc" }]}>
                   Sign Up
                 </Text>
               </LinearGradient>
@@ -149,7 +149,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3a7072",
+    backgroundColor: "#2b569a",
   },
   header: {
     flex: 1,
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 20,
-    backgroundColor: "#f9f1f1",
+    backgroundColor: "#fafbfc",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 20,
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   text_footer: {
-    color: "#3a7072",
+    color: "#2b569a",
     fontSize: 18,
   },
   action: {

@@ -3,12 +3,13 @@ import {
   View,
   Text,
   Image,
-  ImageBackground,
   StyleSheet,
   ScrollView,
   Dimensions,
   StatusBar,
 } from "react-native";
+
+import * as Animatable from "react-native-animatable";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,10 +24,14 @@ const HomeScreen = ({ navigation }) => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#3a7072" barStyle="dark-content" />
+    <Animatable.View animation="fadeInDown" style={styles.container}>
+      <StatusBar backgroundColor="#2b569a" barStyle="dark-content" />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Hello! {user.displayName},</Text>
+        {user ? (
+          <Animatable.Text animation="fadeInDown" style={styles.text_header}>
+            Hello! {user.displayName}
+          </Animatable.Text>
+        ) : null}
       </View>
       <View style={styles.footer}>
         <ScrollView>
@@ -168,7 +173,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </ScrollView>
       </View>
-    </View>
+    </Animatable.View>
   );
 };
 
@@ -177,23 +182,23 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3a7072",
+    backgroundColor: "#2b569a",
   },
   header: {
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 20,
+    paddingTop: 5,
+    paddingBottom: 22,
   },
   text_header: {
-    color: "#fff",
+    color: "#fafbfc",
     fontWeight: "bold",
     fontSize: 30,
   },
   footer: {
     flex: 10,
-    backgroundColor: "#f9f1f1",
+    backgroundColor: "#fafbfc",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingTop: 10,
