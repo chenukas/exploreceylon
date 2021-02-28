@@ -35,15 +35,26 @@ export function CustomDrawerContent(props) {
       <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
-            <View style={{ flexDirection: "row", marginTop: 15 }}>
-              {user != null ? (
+            <View
+              style={{
+                flexDirection: "column",
+                marginTop: 15,
+              }}
+            >
+              {userData ? (
                 <Avatar.Image
-                  source={{ uri: "https://i.pravatar.cc/300" }}
+                  source={{
+                    uri: userData
+                      ? userData.userImg ||
+                        "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg"
+                      : "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg",
+                  }}
                   size={75}
+                  style={{ alignSelf: "center" }}
                 />
               ) : null}
               {userData ? (
-                <View style={{ marginLeft: 15, flexDirection: "column" }}>
+                <View style={{ flexDirection: "column", alignSelf: "center" }}>
                   <Title style={styles.title}>
                     {userData.fname} {userData.lname}
                   </Title>
@@ -144,9 +155,7 @@ const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
   },
-  userInfoSection: {
-    paddingLeft: 20,
-  },
+  userInfoSection: {},
   title: {
     fontSize: 20,
     marginTop: 10,

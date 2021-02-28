@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import {
   View,
   Text,
-  Image,
   StyleSheet,
   ScrollView,
   Dimensions,

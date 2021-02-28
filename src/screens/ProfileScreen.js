@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import * as Animatable from "react-native-animatable";
 
 import firestore from "@react-native-firebase/firestore";
 
@@ -52,17 +53,28 @@ const ProfileScreen = ({ navigation }) => {
         >
           {userData ? (
             <>
-              <Image
+              <Animatable.Image
+                animation="fadeInDown"
                 style={styles.userImg}
-                source={{ uri: "https://i.pravatar.cc/300" }}
-              ></Image>
-              <Text style={styles.userName}>
+                source={{
+                  uri: userData
+                    ? userData.userImg ||
+                      "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg"
+                    : "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg",
+                }}
+              ></Animatable.Image>
+              <Animatable.Text animation="fadeInDown" style={styles.userName}>
                 {userData.fname} {userData.lname}
-              </Text>
-              <Text style={[styles.aboutUser, { marginBottom: 5 }]}>
+              </Animatable.Text>
+              <Animatable.Text
+                animation="fadeInDown"
+                style={[styles.aboutUser, { marginBottom: 5 }]}
+              >
                 {userData.email}
-              </Text>
-              <Text style={styles.aboutUser}>{userData.phone}</Text>
+              </Animatable.Text>
+              <Animatable.Text animation="fadeInDown" style={styles.aboutUser}>
+                {userData.phone}
+              </Animatable.Text>
               <View style={styles.userBtnWrapper}>
                 <TouchableOpacity
                   style={styles.userBtn}
@@ -123,8 +135,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   userImg: {
-    height: 125,
-    width: 125,
+    height: 100,
+    width: 100,
     borderRadius: 75,
     marginTop: 10,
   },
