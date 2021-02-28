@@ -281,19 +281,7 @@ const EditProfileScreen = () => {
             style={styles.textInput}
           />
         </View>
-        <View style={styles.action}>
-          <Ionicons name="ios-clipboard-outline" color="#333333" size={20} />
-          <TextInput
-            multiline
-            numberOfLines={3}
-            placeholder="About Me"
-            placeholderTextColor="#666666"
-            value={userData ? userData.about : ""}
-            onChangeText={(txt) => setUserData({ ...userData, about: txt })}
-            autoCorrect={true}
-            style={[styles.textInput, { height: 40 }]}
-          />
-        </View>
+
         <View style={styles.action}>
           <Feather name="phone" color="#333333" size={20} />
           <TextInput

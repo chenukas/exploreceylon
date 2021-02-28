@@ -1,14 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { Avatar, Title, Caption, Drawer } from "react-native-paper";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+import firestore from "@react-native-firebase/firestore";
+
 import { AuthContext } from "../navigation/AuthProvider";
 
 export function CustomDrawerContent(props) {
   const { user, logout } = useContext(AuthContext);
+  const [userData, setUserData] = useState(null);
+
+  const getUser = async () => {
+    const currentUser = await firestore()
+      .collection("users")
+      .doc(user.uid)
+      .get()
+      .then((documentSnapshot) => {
+        if (documentSnapshot.exists) {
+          console.log("User Data", documentSnapshot.data());
+          setUserData(documentSnapshot.data());
+        }
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <View style={{ flex: 1 }}>
@@ -22,10 +42,14 @@ export function CustomDrawerContent(props) {
                   size={75}
                 />
               ) : null}
-              <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title style={styles.title}>{user.displayName}</Title>
-                <Caption style={styles.caption}>{user.email}</Caption>
-              </View>
+              {userData ? (
+                <View style={{ marginLeft: 15, flexDirection: "column" }}>
+                  <Title style={styles.title}>
+                    {userData.fname} {userData.lname}
+                  </Title>
+                  <Caption style={styles.caption}>{user.email}</Caption>
+                </View>
+              ) : null}
             </View>
           </View>
           <Drawer.Section style={styles.drawerSection}>

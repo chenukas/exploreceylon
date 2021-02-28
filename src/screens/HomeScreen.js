@@ -20,14 +20,31 @@ import { AuthContext } from "../navigation/AuthProvider";
 import { SliderBox } from "react-native-image-slider-box";
 import { dummyData } from "../data/Data";
 
+import firestore from "@react-native-firebase/firestore";
+
 const HomeScreen = ({ navigation }) => {
   const { user } = useContext(AuthContext);
   const [currentHour, setCurrentHour] = useState();
+  const [userData, setUserData] = useState(null);
+
+  const getUser = async () => {
+    const currentUser = await firestore()
+      .collection("users")
+      .doc(user.uid)
+      .get()
+      .then((documentSnapshot) => {
+        if (documentSnapshot.exists) {
+          console.log("User Data", documentSnapshot.data());
+          setUserData(documentSnapshot.data());
+        }
+      });
+  };
 
   useEffect(() => {
     let hour = new Date().getHours();
     setCurrentHour(hour);
-  });
+    getUser();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -42,9 +59,14 @@ const HomeScreen = ({ navigation }) => {
             Good Evening,
           </Animatable.Text>
         )}
-        <Animatable.Text animation="fadeInDown" style={styles.text_header_name}>
-          {user.fname}
-        </Animatable.Text>
+        {userData ? (
+          <Animatable.Text
+            animation="fadeInDown"
+            style={styles.text_header_name}
+          >
+            {userData.fname}
+          </Animatable.Text>
+        ) : null}
       </View>
       <View style={styles.footer}>
         <ScrollView showsVerticalScrollIndicator={false}>
