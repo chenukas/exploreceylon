@@ -24,33 +24,22 @@ export const AuthProvider = ({ children }) => {
             console.log(e);
           }
         },
-        register: async (
-          email,
-          password,
-          fullName,
-          displayName,
-          phoneNumber
-        ) => {
+        register: async (fname, lname, email, phone, password) => {
           try {
             await auth()
               .createUserWithEmailAndPassword(email, password)
-              .then((res) => {
-                res.user.updateProfile({
-                  displayName: displayName,
-                });
-                console.log("User has registered successfully");
-              })
               .then(() => {
                 firestore()
                   .collection("users")
                   .doc(auth().currentUser.uid)
                   .set({
                     //user variables
-                    fullName: fullName,
-                    displayName: displayName,
+                    fname: fname,
+                    lname: lname,
                     email: email,
-                    phoneNumber: phoneNumber,
+                    phone: phone,
                     createdAt: firestore.Timestamp.fromDate(new Date()),
+                    userImg: null,
                   })
                   .catch((error) => {
                     console.log(
@@ -58,6 +47,7 @@ export const AuthProvider = ({ children }) => {
                       error
                     );
                   });
+                console.log("User has registered successfully");
               })
               .catch((error) => {
                 console.log("Something went wrong with sign up: ", error);
