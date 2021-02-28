@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   TouchableOpacity,
   View,
@@ -11,6 +11,9 @@ import {
 } from "react-native";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import * as Animatable from "react-native-animatable";
+
+import firestore from "@react-native-firebase/firestore";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
@@ -18,6 +21,24 @@ const { width, height } = Dimensions.get("window");
 
 const ProfileScreen = ({ navigation }) => {
   const { user, logout } = useContext(AuthContext);
+  const [userData, setUserData] = useState(null);
+
+  const getUser = async () => {
+    const currentUser = await firestore()
+      .collection("users")
+      .doc(user.uid)
+      .get()
+      .then((documentSnapshot) => {
+        if (documentSnapshot.exists) {
+          console.log("User Data", documentSnapshot.data());
+          setUserData(documentSnapshot.data());
+        }
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -30,23 +51,42 @@ const ProfileScreen = ({ navigation }) => {
           }}
           showsVerticalScrollIndicator={false}
         >
-          <Image
-            style={styles.userImg}
-            source={{ uri: "https://i.pravatar.cc/300" }}
-          ></Image>
-          <Text style={styles.userName}>Chenuka</Text>
-          <Text style={[styles.aboutUser, { marginBottom: 5 }]}>Email</Text>
-          <Text style={styles.aboutUser}>Phone No</Text>
-          <View style={styles.userBtnWrapper}>
-            <TouchableOpacity
-              style={styles.userBtn}
-              onPress={() => {
-                navigation.navigate("EditProfile");
-              }}
-            >
-              <Text style={styles.userBtnTxt}>Edit</Text>
-            </TouchableOpacity>
-          </View>
+          {userData ? (
+            <>
+              <Animatable.Image
+                animation="fadeInDown"
+                style={styles.userImg}
+                source={{
+                  uri: userData
+                    ? userData.userImg ||
+                      "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg"
+                    : "http://brownmead.academy/wp-content/uploads/2017/01/avatar.jpg",
+                }}
+              ></Animatable.Image>
+              <Animatable.Text animation="fadeInDown" style={styles.userName}>
+                {userData.fname} {userData.lname}
+              </Animatable.Text>
+              <Animatable.Text
+                animation="fadeInDown"
+                style={[styles.aboutUser, { marginBottom: 5 }]}
+              >
+                {userData.email}
+              </Animatable.Text>
+              <Animatable.Text animation="fadeInDown" style={styles.aboutUser}>
+                {userData.phone}
+              </Animatable.Text>
+              <View style={styles.userBtnWrapper}>
+                <TouchableOpacity
+                  style={styles.userBtn}
+                  onPress={() => {
+                    navigation.navigate("EditProfile");
+                  }}
+                >
+                  <Text style={styles.userBtnTxt}>Edit</Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          ) : null}
           <View style={styles.imageContainer}>
             <View style={[styles.imageView, { backgroundColor: "#57aaff" }]}>
               <MaterialIcons
@@ -95,8 +135,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   userImg: {
-    height: 125,
-    width: 125,
+    height: 100,
+    width: 100,
     borderRadius: 75,
     marginTop: 10,
   },

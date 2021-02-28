@@ -30,7 +30,7 @@ const SignUpScreen = ({ navigation }) => {
         {/*<Text style={styles.text_header}>Register Now!</Text> */}
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.text_footer}>First Name</Text>
           <View style={styles.action}>
             <FeatherIcons name="user" color="#2b569a" size={20} />
