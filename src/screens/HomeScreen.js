@@ -13,7 +13,7 @@ import * as Animatable from "react-native-animatable";
 
 const { width, height } = Dimensions.get("window");
 
-import Icon from "react-native-vector-icons/MaterialIcons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
           </Animatable.Text>
         )}
         <Animatable.Text animation="fadeInDown" style={styles.text_header_name}>
-          {user.displayName}
+          {user.fname}
         </Animatable.Text>
       </View>
       <View style={styles.footer}>
@@ -86,7 +86,7 @@ const HomeScreen = ({ navigation }) => {
 
           <View style={styles.imageContainer}>
             <View style={[styles.imageView, { backgroundColor: "#57aaff" }]}>
-              <Icon
+              <MaterialIcons
                 name="hotel"
                 size={40}
                 color="white"
@@ -95,7 +95,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.menuText}>Hotels</Text>
             </View>
             <View style={[styles.imageView, { backgroundColor: "#660724" }]}>
-              <Icon
+              <MaterialIcons
                 name="directions-car"
                 size={40}
                 color="white"
@@ -107,7 +107,7 @@ const HomeScreen = ({ navigation }) => {
 
           <View style={styles.imageContainer}>
             <View style={[styles.imageView, { backgroundColor: "#eba123" }]}>
-              <Icon
+              <MaterialIcons
                 name="timeline"
                 size={40}
                 color="white"
@@ -116,7 +116,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.menuText}>Trip Planner</Text>
             </View>
             <View style={[styles.imageView, { backgroundColor: "#217338" }]}>
-              <Icon
+              <MaterialIcons
                 name="library-books"
                 size={40}
                 color="white"
@@ -183,10 +183,5 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-  },
-  image: {
-    width: "100%",
-    height: "100%",
-    borderRadius: 10,
   },
 });

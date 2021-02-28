@@ -16,11 +16,11 @@ import FeatherIcons from "react-native-vector-icons/Feather";
 import { AuthContext } from "../navigation/AuthProvider";
 
 const SignUpScreen = ({ navigation }) => {
+  const [fname, setFname] = useState();
+  const [lname, setLname] = useState();
   const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
-  const [fullName, setFullName] = useState();
-  const [displayName, setDisplayName] = useState();
-  const [phoneNumber, setPhoneNumber] = useState();
 
   const { register } = useContext(AuthContext);
   return (
@@ -31,31 +31,29 @@ const SignUpScreen = ({ navigation }) => {
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <ScrollView>
-          <Text style={styles.text_footer}>Full Name</Text>
+          <Text style={styles.text_footer}>First Name</Text>
           <View style={styles.action}>
             <FeatherIcons name="user" color="#2b569a" size={20} />
             <TextInput
-              placeholder="Enter your full name here..."
+              placeholder="Enter your first name here..."
               returnKeyType="next"
               style={styles.textInput}
               autoCapitalize="words"
-              value={fullName}
-              onChangeText={(fullName) => setFullName(fullName)}
+              value={fname}
+              onChangeText={(fname) => setFname(fname)}
             />
           </View>
 
-          <Text style={[styles.text_footer, { marginTop: 25 }]}>
-            Display Name
-          </Text>
+          <Text style={[styles.text_footer, { marginTop: 25 }]}>Last Name</Text>
           <View style={styles.action}>
             <FeatherIcons name="tag" color="#2b569a" size={20} />
             <TextInput
-              placeholder="Enter your display name here..."
+              placeholder="Enter your last name here..."
               returnKeyType="next"
               style={styles.textInput}
               autoCapitalize="words"
-              value={displayName}
-              onChangeText={(displayName) => setDisplayName(displayName)}
+              value={lname}
+              onChangeText={(lname) => setLname(lname)}
             />
           </View>
 
@@ -69,7 +67,7 @@ const SignUpScreen = ({ navigation }) => {
               keyboardType="email-address"
               returnKeyType="next"
               value={email}
-              onChangeText={(userEmail) => setEmail(userEmail)}
+              onChangeText={(email) => setEmail(email)}
             />
           </View>
 
@@ -82,8 +80,8 @@ const SignUpScreen = ({ navigation }) => {
               maxLength={10}
               returnKeyType="next"
               style={styles.textInput}
-              value={phoneNumber}
-              onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
+              value={phone}
+              onChangeText={(phone) => setPhone(phone)}
             />
           </View>
 
@@ -97,7 +95,7 @@ const SignUpScreen = ({ navigation }) => {
               autoCapitalize="none"
               returnKeyType="done"
               value={password}
-              onChangeText={(userPassword) => setPassword(userPassword)}
+              onChangeText={(password) => setPassword(password)}
             />
           </View>
           <View style={styles.textPrivate}>
@@ -120,9 +118,7 @@ const SignUpScreen = ({ navigation }) => {
           <View style={styles.button}>
             <TouchableOpacity
               style={styles.signIn}
-              onPress={() =>
-                register(email, password, fullName, displayName, phoneNumber)
-              }
+              onPress={() => register(fname, lname, email, phone, password)}
             >
               <LinearGradient
                 colors={["#3e639e", "#2b569a"]}

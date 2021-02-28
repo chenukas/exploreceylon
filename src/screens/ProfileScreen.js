@@ -3,211 +3,174 @@ import {
   TouchableOpacity,
   View,
   Text,
-  SafeAreaView,
+  StatusBar,
   StyleSheet,
   ScrollView,
   Image,
+  Dimensions,
 } from "react-native";
 
-import Icon from "react-native-vector-icons/Feather";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { AuthContext } from "../navigation/AuthProvider";
+
+const { width, height } = Dimensions.get("window");
 
 const ProfileScreen = ({ navigation }) => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View>
-        <View
-          style={{
-            alignItems: "flex-end",
-            padding: 10,
-            backgroundColor: "#ffffff",
-            margin: 10,
-            borderRadius: 10,
+    <View style={styles.container}>
+      <View style={styles.header}></View>
+      <View style={styles.footer}>
+        <ScrollView
+          contentContainerStyle={{
+            justifyContent: "center",
+            alignItems: "center",
           }}
+          showsVerticalScrollIndicator={false}
         >
           <Image
-            style={{
-              width: 135,
-              height: 135,
-              borderRadius: 80,
-              borderWidth: 2,
-              borderColor: "#fcc221",
-            }}
+            style={styles.userImg}
             source={{ uri: "https://i.pravatar.cc/300" }}
           ></Image>
-        </View>
-        <View style={{ position: "absolute", width: "50%" }}>
-          <Text
-            style={{
-              color: "#000",
-              fontSize: 20,
-              fontWeight: "bold",
-              marginTop: 25,
-              alignSelf: "center",
-            }}
-          >
-            Natalie Eleanor
-          </Text>
-          <Text
-            style={{
-              fontSize: 15,
-              marginTop: 4,
-              alignSelf: "center",
-            }}
-          >
-            04-June-1997
-          </Text>
-          <Text
-            style={{
-              fontSize: 15,
-              marginTop: 4,
-              alignSelf: "center",
-              marginBottom: 10,
-            }}
-          >
-            23y/old
-          </Text>
-          <TouchableOpacity onPress={() => logout()}>
-            <View
-              style={{
-                backgroundColor: "#fcc221",
-                height: 35,
-                borderRadius: 50,
-                width: "60%",
-                alignSelf: "center",
+          <Text style={styles.userName}>Chenuka</Text>
+          <Text style={[styles.aboutUser, { marginBottom: 5 }]}>Email</Text>
+          <Text style={styles.aboutUser}>Phone No</Text>
+          <View style={styles.userBtnWrapper}>
+            <TouchableOpacity
+              style={styles.userBtn}
+              onPress={() => {
+                navigation.navigate("EditProfile");
               }}
             >
-              <Text
-                style={{
-                  alignSelf: "center",
-                  fontSize: 15,
-                  color: "white",
-                  padding: 5,
-                }}
-              >
-                Edit Profile
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            padding: 10,
-            backgroundColor: "#ffffff",
-            marginTop: 0,
-            margin: 10,
-            borderRadius: 10,
-          }}
-        >
-          <TouchableOpacity style={{ alignSelf: "center" }}>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 5,
-                width: 115,
-                height: 115,
-                borderRadius: 80,
-                backgroundColor: "#fafbfc",
-                borderWidth: 2,
-                borderColor: "#fcc221",
-              }}
-            >
-              <Icon
-                name="image"
-                color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 25 }}
-                size={35}
+              <Text style={styles.userBtnTxt}>Edit</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.imageContainer}>
+            <View style={[styles.imageView, { backgroundColor: "#57aaff" }]}>
+              <MaterialIcons
+                name="collections"
+                size={40}
+                color="white"
+                style={styles.menuIcon}
               />
-              <View>
-                <Text
-                  style={{
-                    alignSelf: "center",
-                    fontSize: 18,
-                    color: "#000",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Gallery
-                </Text>
-              </View>
+              <Text style={styles.menuText}>Gallery</Text>
             </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={{ alignSelf: "center" }}>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 20,
-                width: 115,
-                height: 115,
-                borderRadius: 80,
-                backgroundColor: "#fafbfc",
-                borderWidth: 2,
-                borderColor: "#fcc221",
-              }}
-            >
-              <Icon
-                name="map-pin"
-                color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 25 }}
-                size={35}
+            <View style={[styles.imageView, { backgroundColor: "#660724" }]}>
+              <MaterialIcons
+                name="event-note"
+                size={40}
+                color="white"
+                style={styles.menuIcon}
               />
-              <View>
-                <Text
-                  style={{
-                    alignSelf: "center",
-                    fontSize: 18,
-                    color: "#000",
-                    fontWeight: "bold",
-                  }}
-                >
-                  History
-                </Text>
-              </View>
+              <Text style={styles.menuText}>History</Text>
             </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={{ alignSelf: "center" }}>
-            <View
-              style={{
-                alignSelf: "center",
-                marginTop: 20,
-                width: 115,
-                height: 115,
-                borderRadius: 80,
-                backgroundColor: "#fafbfc",
-                borderWidth: 2,
-                borderColor: "#fcc221",
-                marginBottom: 5,
-              }}
-            >
-              <Icon
-                name="plus-circle"
-                color={"#fcc221"}
-                style={{ alignSelf: "center", marginTop: 25 }}
-                size={35}
-              />
-              <View>
-                <Text
-                  style={{
-                    alignSelf: "center",
-                    fontSize: 18,
-                    color: "#000",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Plans
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </ScrollView>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 export default ProfileScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#2b569a",
+  },
+  header: {
+    flex: 1,
+    justifyContent: "flex-end",
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    paddingBottom: 10,
+  },
+  footer: {
+    flex: 20,
+    backgroundColor: "#fafbfc",
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    paddingTop: 10,
+  },
+  userImg: {
+    height: 125,
+    width: 125,
+    borderRadius: 75,
+    marginTop: 10,
+  },
+  userName: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  aboutUser: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#666",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  userBtnWrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
+    marginBottom: 10,
+  },
+  userBtn: {
+    borderColor: "#2b569a",
+    borderWidth: 1,
+    borderRadius: 20,
+    paddingVertical: 5,
+    paddingHorizontal: 25,
+    marginHorizontal: 5,
+  },
+  userBtnTxt: {
+    color: "#2b569a",
+    fontWeight: "bold",
+  },
+  userInfoWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
+    marginVertical: 20,
+  },
+  userInfoItem: {
+    justifyContent: "center",
+  },
+  userInfoTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 5,
+    textAlign: "center",
+  },
+  userInfoSubTitle: {
+    fontSize: 12,
+    color: "#666",
+    textAlign: "center",
+  },
+  menuIcon: {
+    bottom: 2,
+  },
+  menuText: {
+    color: "white",
+    fontSize: 14,
+    alignSelf: "center",
+    fontFamily: "Kanit-Medium",
+  },
+  imageContainer: {
+    flexDirection: "row",
+    marginTop: 30,
+    alignSelf: "center",
+  },
+  imageView: {
+    width: width / 2 - 15,
+    height: height / 6,
+    marginHorizontal: 5,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
