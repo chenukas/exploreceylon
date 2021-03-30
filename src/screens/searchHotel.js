@@ -11,7 +11,7 @@ import {
   TextInput,
 } from "react-native";
 
-const searchHotel = ({ navigation }) => {
+const SearchHotel = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flexGrow: 1, height: "100%" }}>
@@ -31,7 +31,7 @@ const searchHotel = ({ navigation }) => {
                     backgroundColor: "#fafbfc",
                     fontSize: 16,
                   }}
-                  placeholder="Name/Location"
+                  placeholder="Where are you going?"
                   returnKeyType="next"
                 ></TextInput>
                 <View
@@ -52,7 +52,7 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="Check-out(MM-DD-YYYY)"
+                    placeholder="Check-in"
                     maxLength={10}
                     keyboardType="number-pad"
                     returnKeyType="next"
@@ -67,7 +67,7 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="Check-out(MM-DD-YYYY)"
+                    placeholder="Check-out"
                     maxLength={10}
                     keyboardType="number-pad"
                     returnKeyType="next"
@@ -91,7 +91,7 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="No. of People"
+                    placeholder="Guests"
                     keyboardType="number-pad"
                     returnKeyType="next"
                   ></TextInput>
@@ -105,7 +105,7 @@ const searchHotel = ({ navigation }) => {
                       backgroundColor: "#fafbfc",
                       fontSize: 16,
                     }}
-                    placeholder="No. of Rooms"
+                    placeholder="Rooms"
                     keyboardType="number-pad"
                     returnKeyType="done"
                   ></TextInput>
@@ -116,7 +116,7 @@ const searchHotel = ({ navigation }) => {
                       borderRadius: 10,
                       height: 50,
                       margin: 4,
-                      backgroundColor: "#fcc221",
+                      backgroundColor: "#2b569a",
                     }}
                   >
                     <Text
@@ -144,7 +144,7 @@ const searchHotel = ({ navigation }) => {
                 flexDirection: "row",
                 borderRadius: 10,
                 borderWidth: 2,
-                borderColor: "#fcc221",
+                borderColor: "#2b569a",
                 width: "95%",
                 alignSelf: "center",
               }}
@@ -166,7 +166,7 @@ const searchHotel = ({ navigation }) => {
               flexDirection: "row",
               borderRadius: 10,
               borderWidth: 2,
-              borderColor: "#fcc221",
+              borderColor: "#2b569a",
               width: "95%",
               alignSelf: "center",
             }}
@@ -187,7 +187,7 @@ const searchHotel = ({ navigation }) => {
               flexDirection: "row",
               borderRadius: 10,
               borderWidth: 2,
-              borderColor: "#fcc221",
+              borderColor: "#2b569a",
               width: "95%",
               alignSelf: "center",
             }}
@@ -208,7 +208,7 @@ const searchHotel = ({ navigation }) => {
               flexDirection: "row",
               borderRadius: 10,
               borderWidth: 2,
-              borderColor: "#fcc221",
+              borderColor: "#2b569a",
               width: "95%",
               alignSelf: "center",
             }}
@@ -229,7 +229,7 @@ const searchHotel = ({ navigation }) => {
               flexDirection: "row",
               borderRadius: 10,
               borderWidth: 2,
-              borderColor: "#fcc221",
+              borderColor: "#2b569a",
               width: "95%",
               alignSelf: "center",
             }}
@@ -250,7 +250,7 @@ const searchHotel = ({ navigation }) => {
   );
 };
 
-export default searchHotel;
+export default SearchHotel;
 
 const styles = StyleSheet.create({
   container: {
@@ -271,9 +271,9 @@ const styles = StyleSheet.create({
   },
   hotelNames: {
     padding: 5,
-    fontWeight: "bold",
-    fontSize: 24,
+    fontSize: 20,
     paddingTop: 20,
+    fontFamily: "Kanit-Medium",
   },
   prices: {
     fontSize: 16,
@@ -281,6 +281,6 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     alignSelf: "flex-end",
     paddingRight: 20,
-    fontWeight: "bold",
+    fontFamily: "Kanit-Thin",
   },
 });
